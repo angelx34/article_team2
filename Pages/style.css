@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.eyeLogoContainer{
+    display:flex;
+}
+.eyeLogo{
+    height:100px;
+    width:100px;
+}
+
+nav{
+    padding: 30px;
+    text-align: justify;
+    background-color: rgb(230, 81, 0);
+    color: rgb(255, 255, 255); 
+}
+
+a {
+    color: rgb(0,0,0);
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+.cover{
+    text-align: center;
+    padding:10px;
+    font-size: 20px;
+    padding-top: 250px;
+    padding-bottom: 500px;
+    background-color: rgb(3, 155, 229);
+}
+
+.IntroSection{
+    font-size: 20px;
+    padding: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.byline{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-style: italic;
+    
+}
+
+.pBody{
+    text-align:left;
+    padding:20px;
+    margin-left:300px;
+    margin-right:300px;
+}
+
+.main{
+
+}
+
+.mainLeft{
+
+}
+.mainRight{
+    
+}
