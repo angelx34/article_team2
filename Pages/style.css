@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:white;
+}
+
+.eyeLogo{
+    height:100%;
+    width:100px;
+    vertical-align:middle;
+}
+
+/* nav{
+    padding:10px;
+    text-align: left;
+    background-color: rgb(230, 81, 0);
+    color: rgb(255, 255, 255); 
+    position:fixed;
+    width:100%;
+    align-items: center;
+    display:flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+} */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%; 
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .navbar a.active {
+    background-color: #04AA6D;
+  }
+
+/* a {
+    color: rgb(0,0,0);
+    text-decoration:none;
+    font-size:20px;
+    justify-content:space-evenly;
+    display:inline;
+    vertical-align:middle;
+} */
+a:hover{
+    text-decoration:underline;
+}
+.cover{
+    text-align: center;
+    padding:10px;
+    font-size: 20px;
+    padding-top: 350px;
+    padding-bottom: 500px;
+    background-color: rgb(3, 155, 229);
+
+}
+
+.IntroSection{
+    font-size: 20px;
+    padding: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.byline{
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-style: italic;
+    
+}
+
+.pBody{
+    text-align:left;
+    padding:20px;
+    margin-left:150px;
+    margin-right:150px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    row-gap: 40px;
+   
+}
+
+.mainLeft{
+    flex: 1;
+    
+    background-color: yellow;
+
+}
+.mainRight{
+    flex: 1;
+    padding: 100px;
+}  
+
+footer{
+    width: 100%;
+}
