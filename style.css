@@ -9,13 +9,16 @@ body{
 }
 
 .eyeLogo{
-    height:100%;
-    width:100px;
     vertical-align:middle;
     background-color: black;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius:30%;
-    border-bottom-left-radius:30%;  
+    border-top-right-radius: 50%;
+    border-bottom-right-radius:50%;
+    border:5px black solid;
+    border-bottom-left-radius:50%; 
+}
+
+.logo img{
+    width:83px;
 }
 
 .logo{
@@ -36,7 +39,7 @@ body{
     vertical-align: middle;
     margin-left:50px;
     opacity: 0;
-    top:0 auto;
+    top:-8px;
     z-index:1;
     transition: opacity 0.3s ease;
     pointer-events: none;
