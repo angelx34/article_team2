@@ -24,10 +24,11 @@ body{
     position:fixed;
     width:100%;
     flex-wrap:wrap;
-    justify-content:flex-start;
+    justify-content:space-evenly;
     flex-direction:row;
     display:inline-flex;
     vertical-align: middle;
+    margin-left:100px;
   }
 
   .navbar a {
