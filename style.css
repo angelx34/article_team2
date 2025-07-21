@@ -12,11 +12,17 @@ body{
     height:100%;
     width:100px;
     vertical-align:middle;
+    background-color: black;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius:30%;
+    border-bottom-left-radius:30%;  
 }
+
 .logo{
     float:left;
     position: fixed;
     display:flex;
+    z-index:10;
 }
 .navbar {
     background-color: #E65100;
@@ -28,13 +34,15 @@ body{
     flex-direction:row;
     display:inline-flex;
     vertical-align: middle;
-    margin-left:100px;
+    margin-left:50px;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    top:0 auto;
+    z-index:1;
+    transition: opacity 0.3s ease;
     pointer-events: none;
 }
 .navbar.visible {
-    opacity: 1;
+    opacity: 0.9;
     pointer-events: auto;
 }
 .navbar a {
