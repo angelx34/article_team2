@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color:white;
+    background-color:#FCEC87;
 }
 
 .eyeLogo{
@@ -29,9 +29,15 @@ body{
     display:inline-flex;
     vertical-align: middle;
     margin-left:100px;
-  }
-
-  .navbar a {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.navbar a {
     width: 10%;
     color: white;
     text-decoration: none;
@@ -40,12 +46,13 @@ body{
     padding: 14px;
     text-align:center;
     margin: 5px;
-  }
+}
   
   .navbar a:hover {
     background-color: #FFB300;
     box-shadow: 10px 5px 5px black;
 }
+
 .cover{
     background-image: url('https://www.kindpng.com/picc/m/564-5640631_file-antu-insert-image-svg-insert-image-here.png');
     text-align: center;
@@ -53,8 +60,7 @@ body{
     font-size: 20px;
     padding-top: 350px;
     padding-bottom: 500px;
-    background-color: rgb(3, 155, 229);
-
+    background-color: #FCEC87;
 }
 
 .IntroSection{
@@ -68,15 +74,13 @@ body{
     font-size: 20px;
     padding-bottom: 20px;
     font-style: italic;
-    
 }
 
 .pBody{
     text-align:left;
     padding:20px;
-    margin-left:150px;
-    margin-right:150px;
-    
+    margin-left:25%;
+    margin-right:25%;
 }
 
 .main{
@@ -84,18 +88,19 @@ body{
     grid-template-columns: 1fr 1fr;
     gap: 0px;
     row-gap: 40px;
-   
+    height: 800px;
+    
 }
 
 .mainLeft{
     flex: 1;
-    
-    background-color: yellow;
 
+    background-color: yellow;
 }
 .mainRight{
     flex: 1;
     padding: 100px;
+    background-color: lightblue;
 }  
 
 footer{
