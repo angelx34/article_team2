@@ -5,14 +5,17 @@
 
 body{
     background-color:#FCEC87;
+    overflow-x:hidden;
+    scrollbar-width: none;
+    scrollbar-gutter: none;
 }
+
 html{
     scroll-behavior:smooth;
 }
 body, html{
     height:100%;
     scrollbar-color:#FCEC87;
-    scrollbar-width: none;
 }
 
 .eyeLogo{
@@ -152,6 +155,7 @@ body, html{
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
     gap: 10px;
     align-items: start;
     height: 800px;
@@ -162,17 +166,9 @@ body, html{
   }
 
 .mainImage{
-    height: fit-content;
-    width: fit-content;
-}
-
-.mainLeft img{
-    height: fit-content;
-    width:fit-content;
 }
 
 .mainLeft {
-    height: fit-content;
     background-color: yellow;
     padding: 40px;
     vertical-align:text-bottom;
@@ -183,13 +179,14 @@ body, html{
 }
 
 .mainRight {
-    max-height: calc(100vh - 80px); 
+    max-height: calc(100vh - 14.83vh);
     overflow-y: auto;
     background-color: lightblue;
     padding: 20px;
     scrollbar-width: none;
-    font-size: 20px;
+    font-size: 20px;   
 }
+
 .mainRight h3{
     text-align:center;
 }
@@ -219,10 +216,43 @@ footer{
     font-size: 20px;
     color:black;
 }
+
 footer a{
     text-decoration: none;
     color:black;
 }
+
 footer a:hover{
     color:#E65100;
+}
+
+.gridBox{
+    display:grid;
+    grid-auto-rows: 1fr;
+    align-items:start;
+    grid-template-columns:1fr 1fr 1fr;
+    text-align:center;
+}
+
+.wineryMain h3{
+    text-align:center;
+    font-size: 30px;
+}
+
+.itemContainer {
+    border: 2px dotted black;
+    overflow: hidden;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    
+}
+
+.itemContainer img{
+        box-shadow: black 5px 5px;
+}
+
+
+.wineryMain{
+    padding-bottom: 4%;
 }
