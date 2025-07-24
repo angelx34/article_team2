@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const nav = document.getElementById('navBar');
-
+    const triggerSect = document.querySelector('.IntroSection');
     window.addEventListener('scroll', function() {
         const scrollPos = window.scrollY;
-        const scrollThreshold = 1000;
+        const scrollThreshold = triggerSect.offsetTop;
 
         if (scrollPos > scrollThreshold) {
             if (!nav.classList.contains('visible')) {

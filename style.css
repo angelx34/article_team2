@@ -6,8 +6,13 @@
 body{
     background-color:#FCEC87;
 }
+html{
+    scroll-behavior:smooth;
+}
 body, html{
     height:100%;
+    scrollbar-color:#FCEC87;
+    scrollbar-width: none;
 }
 
 .eyeLogo{
@@ -126,12 +131,12 @@ body, html{
     font-style: italic;
 }
 
-
 .pBody {
   text-align: left;
   padding: 20px;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 25%;
+  bottom:25%;
+  margin-right: 25%;
   font-size: 20px;
 }
 
@@ -144,61 +149,75 @@ body, html{
   }
 }
 
-
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0px;
+    gap: 10px;
     align-items: start;
     height: 800px;
     padding: 40px;
-    box-sizing: border-box;
+    margin-left:-3%;
+    margin-right:-3%;
     position: relative;
   }
-  
-  
-  .mainLeft {
+
+.mainImage{
+    height: fit-content;
+    width: fit-content;
+}
+
+.mainLeft img{
+    height: fit-content;
+    width:fit-content;
+}
+
+.mainLeft {
     height: fit-content;
     background-color: yellow;
     padding: 40px;
-    
-  }
-  
-  
-  .mainRight {
+    vertical-align:text-bottom;
+}
+
+.mainLeft p{
+    font-size:15px;
+}
+
+.mainRight {
     max-height: calc(100vh - 80px); 
     overflow-y: auto;
     background-color: lightblue;
     padding: 20px;
-    
-  }
+    scrollbar-width: none;
+    font-size: 20px;
+}
+.mainRight h3{
+    text-align:center;
+}
   
-
- /* .main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px;
-    row-gap: 40px;
-    height: 800px;
-    
+@media (max-width: 768px) {
+    .main{
+        display:block;
+        margin-bottom:100px;
+    }
+    .mainLeft{
+        text-align: center;
+        vertical-align:text-bottom;
+        overflow:hidden;
+    }
+    .mainLeft img{
+       height: 250px;
+       width: 250px;
+    }
+    .mainRight{
+        float:left;
+    }
 }
-
-.mainLeft{
-    flex: 1;
-    background-color: yellow;
-}
-.mainRight{
-    flex: 1;
-    padding: 100px;
-    background-color: lightblue;
-}    */
 
 footer{
     width: 100%;
     text-align:center;
     font-size: 20px;
     color:black;
-
 }
 footer a{
     text-decoration: none;
