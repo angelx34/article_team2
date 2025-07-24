@@ -18,12 +18,20 @@ body, html{
     scrollbar-color:#FCEC87;
 }
 
+p{
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+}
+
+h3{
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-weight:100;
+}
 .eyeLogo{
     vertical-align:middle;
     background-color: black;
     border-top-right-radius: 50%;
     border-bottom-right-radius:50%;
-    border:5px black solid;
+    border:5px black outset;
     border-bottom-left-radius:50%; 
 }
 
@@ -71,6 +79,8 @@ body, html{
     padding: 14px;
     text-align:center;
     margin: 5px;
+    font-family:'merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
 }
   
 .navbar a:hover {
@@ -80,15 +90,15 @@ body, html{
 
 /* Responsive design 4 phones*/
 @media (max-width: 768px) {
-    .navbar {
+    .navbar {  
     flex-direction: row;
-    justify-content: center;
-    font-size: 10px;
+    justify-content:center;
+    margin-top: 0 auto;
     }
-
     .navbar a {
-        font-size:15px;
+        font-size:10px;
         text-align: center;
+        scroll-behavior:smooth;
     }
 }
 
@@ -165,23 +175,39 @@ body, html{
     position: relative;
   }
 
-.mainImage{
-}
-
 .mainLeft {
-    background-color: yellow;
+    background-color: #667B82;
     padding: 40px;
     vertical-align:text-bottom;
+    border-radius:0.5%;
+}
+
+.mainLeft img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .mainLeft p{
     font-size:15px;
+    text-align:center;
+    margin-top: 10px;
+    font-style: italic;
+    color:white;
 }
 
+.mainLeft, .mainRight{
+    height:100%;
+    box-sizing: border-box;
+}
 .mainRight {
-    max-height: calc(100vh - 14.83vh);
+    border-radius:0.5%;
     overflow-y: auto;
-    background-color: lightblue;
+    background-color: #FED133;
     padding: 20px;
     scrollbar-width: none;
     font-size: 20px;   
@@ -190,22 +216,30 @@ body, html{
 .mainRight h3{
     text-align:center;
 }
-  
+/*Responsive Design 4 phones */
+
 @media (max-width: 768px) {
+    html{
+        overflow-x:hidden;
+    }
     .main{
         display:block;
         margin-bottom:100px;
     }
     .mainLeft{
+        margin-right:-10%;
+        margin-left:-10%;
+        height:50%;
         text-align: center;
         vertical-align:text-bottom;
         overflow:hidden;
     }
-    .mainLeft img{
-       height: 250px;
-       width: 250px;
+    .mainLeft img{  
+       margin: 0 auto;
     }
     .mainRight{
+        margin-right:-10%;
+        margin-left:-10%;
         float:left;
     }
 }
@@ -240,19 +274,120 @@ footer a:hover{
 }
 
 .itemContainer {
-    border: 2px dotted black;
-    overflow: hidden;
-    overflow: scroll;
-    scrollbar-width: none;
+    background: #fffbe6;
+    padding: 18px 12px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 320px; 
+    min-width: 0;
+    min-height: 0;
+    margin-right: 5px;
+    transition: box-shadow 0.2s;
+}
 
-    
+.itemContainer:hover {
+    box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230,81,0,0.22);
+    background: #fff8d1;
+    z-index: 2;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+.itemContainer h4 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 .itemContainer img{
-        box-shadow: black 5px 5px;
+    border-radius:10px;
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+.itemContainer .wineryText {
+    margin-top: 16px;
+    font-size:15px;
+}
 
 .wineryMain{
     padding-bottom: 4%;
+}
+
+/* Responsive design 4 phones */
+
+@media (max-width: 768px) {
+    .gridBox {
+        margin-top:10px;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .itemContainer {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .itemContainer p{
+        font-size: 16px;
+        margin: 8px 0;
+        text-align:left;
+        margin: 0 auto;
+    }
+    .itemContainer img {
+        height: 250px;
+        width: 300px;
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    #game3{
+        margin-top: -100px;
+        margin-bottom: 0 auto;
+    }
+}
+
+.backButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #E65100;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+}
+
+.backButton img {
+    height: 20px;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+.backButton:hover, .backButton:focus {
+    background-color: #FFB300;
+    color: #222;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/*Responsive designs 4 phones*/
+
+@media (max-width: 768px) {
+    .backButton {
+        bottom: 10px;
+        right: 10px;
+        padding: 13px;
+        font-size: 16px;
+    }
 }

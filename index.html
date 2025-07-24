@@ -6,19 +6,27 @@
     <title>article2</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class ="logo">
+
+<div class ="logo">
     <a href="https://www.opportunitynetwork.org">
         <img style="height:80px" class="eyeLogo" src="https://cdn.brandfetch.io/idwO59isjB/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B">
     </a>
 </div>
+
 <div class="navbar" id="navBar" display="none">
-    <a href="#cover">section1</a> 
+    <a href="#firstParagraph">section1</a> 
     <a href="#mainSection">section2</a> 
     <a href="#secondParagraph">section3</a> 
-    <a href="#foot">section4</a>
+    <a href="#wineMain">Games!</a>
 </div>
+
+<div class="backButton">
+    <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back" style="height:24px; width:24px;" onclick="document.getElementById('cover').scrollIntoView({ behavior: 'smooth' });">
+</div>
+
 <div class="cover" id="cover">
     <h1 id ="headline">
         TEMPLATE HEADER
@@ -64,7 +72,7 @@
 
 <div class = "main" id="mainSection">
     <div class = "mainLeft">
-        <img class = "mainImage" src = "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+        <img src = "https://media.istockphoto.com/id/1369953931/photo/meeting-with-business-people-to-discuss-and-brainstorm-ideas-on-financial-reports-the-concept.jpg?s=612x612&w=0&k=20&c=Lt9i408PQJcLSSWtiUIwNpLP5NU3D0aklhGW1KcMS5w=">
         <p>Courtesy of whoever took photo.</p>
     </div>
     <div class = "mainRight">
@@ -157,36 +165,38 @@
     </div>
 </div>
 
-<div class = "wineryMain">
+<div class = "wineryMain" id ="wineMain">
     <h3>Games from OppNet!</h3>
 
 <div class ="gridBox">
 
     <div class = "itemContainer">
         <h4 class ="wineryTitle">Next Steps: Your Post-College Adventure!</h4>
-        <img class = "wineryImg" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" a href="" alt ="img">
+        <a href ="https://github.com/salwajid81" target="_blank">
+            <img class = "wineryImg" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" alt ="img">
+        </a>
         <p class = "wineryText"> <strong>Description:</strong> You’ve finished all the requirements needed to finish your undergraduate program. But you’re stressed out over future plans, as you don’t know what exactly you want to do. Go through different options and decide your OWN fate. Your future is in your hands, where will the next step take you?</p>
     </div>
 
     <div class ="itemContainer">
         <h4 class ="wineryTitle">After Graduation</h4>
-        <img class = "wineryImg" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" a href="" alt = "img">
+        <a href ="https://github.com/salwajid81" target="_blank">
+        <img class = "wineryImg" src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" alt = "img">
+        </a>
         <p class = "wineryText"> <strong>Description:</strong> You are a student that recently graduated and want to take the next step. Either graduate school, full-time job search, fellowships, and/or gap/service programs.</p>
     </div>
     
-<div class ="itemContainer">
-    <h4 class ="wineryTitle" >Searching For Oppurtunities</h4>
-    <img class = "wineryImg" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" a href="" alt = "img">
-    <p class = "wineryText">You are a college student heading home for spring break and have an opportunity to work on your career. 
-        
- </p>
-</div>
+    <div class ="itemContainer" id ="game3">
+        <h4 class ="wineryTitle" >Searching For Oppurtunities</h4>
+        <a href ="https://github.com/salwajid81" target="_blank">
+            <img class = "wineryImg" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVSVyIAwzzILMIhwi7mhpO3PE-l-h8T32YFivaUy8xIgpM1iFdCv_TIRyoBlRbot0HZGs&usqp=CAU" alt = "img">
+        </a>
+        <p class = "wineryText">You are a college student heading home for spring break and have an opportunity to work on your career.</p>
+    </div>
 
 </div>
 
 </div>
-
-
 
 <br>
 <footer>
