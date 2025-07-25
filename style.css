@@ -1,6 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
+    
 }
 
 body{
@@ -8,6 +7,8 @@ body{
     overflow-x:hidden;
     scrollbar-width: none;
     scrollbar-gutter: none;
+    margin: 0;
+    padding: 0;
 }
 
 html{
@@ -38,6 +39,7 @@ h3{
 
 .logo img{
     width:83px;
+    padding:5px;
 }
 
 .logo{
@@ -61,7 +63,7 @@ h3{
     opacity: 0;
     top: -8px;
     z-index: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
 }
 
@@ -95,6 +97,7 @@ h3{
 /* Responsive design 4 phones*/
 @media (max-width: 700px) {
     .navbar{
+        display:inline-flex;
         justify-content: center;
         margin-bottom:-10px;
     }
@@ -128,6 +131,7 @@ h3{
     background-size:cover;
     font-size: 20px;
     background-color: #FCEC87;
+    
 }
 
 #headline{
@@ -160,17 +164,17 @@ h3{
 .pBody {
   text-align: left;
   padding: 20px;
-  margin-left: 25%;
+  margin-left: 30%;
   bottom:25%;
-  margin-right: 25%;
+  margin-right: 30%;
   font-size: 20px;
 }
 
 /* Responsive design 4 phones*/
 @media (max-width: 700px) {
   .pBody {
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
     font-size: 19px;
   }
 }
@@ -229,6 +233,7 @@ h3{
 .mainRight h3{
     text-align:center;
 }
+
 /*Responsive Design 4 phones */
 
 @media (max-width: 700px) {
@@ -254,7 +259,12 @@ h3{
         margin-right:-10%;
         margin-left:-10%;
         float:left;
+        overscroll-behavior: contain;
     }
+}
+
+#secondParagraph{
+    margin-top:-50px;
 }
 
 footer{
@@ -339,7 +349,7 @@ footer a:hover{
     .gridBox {
         margin-top:10px;
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 150px;
     }
     .itemContainer {
         width: 100%;
@@ -387,7 +397,8 @@ footer a:hover{
     vertical-align: middle;
     border-radius: 100%;
 }
-.backButton:hover, .backButton:focus {
+
+.backButton:hover, .backButton:focus, .backButton:active{
     background-color: #FFB300;
     color: #222;
     box-shadow: 0 8px 24px rgba(0,0,0,0.22);
@@ -402,5 +413,16 @@ footer a:hover{
         right: 10px;
         padding: 13px;
         font-size: 16px;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
