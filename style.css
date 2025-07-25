@@ -50,17 +50,17 @@ h3{
 .navbar {
     background-color: #E65100;
     overflow: auto;
-    position:fixed;
-    width:100%;
-    flex-wrap:wrap;
-    justify-content:space-evenly;
-    flex-direction:row;
-    display:inline-flex;
+    position: fixed;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    display: inline-flex;
     vertical-align: middle;
-    margin-left:50px;
+    margin-left: 50px;
     opacity: 0;
-    top:-8px;
-    z-index:1;
+    top: -8px;
+    z-index: 1;
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
@@ -70,35 +70,48 @@ h3{
     pointer-events: auto;
 }
 
-.navbar a {
+.navbar button {
     width: 10%;
     color: white;
-    text-decoration: none;
+    background: none;
+    border: none;
     font-size: 17px;
     align-self: center;
     padding: 14px;
-    text-align:center;
+    text-align: center;
     margin: 5px;
-    font-family:'merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
 }
-  
-.navbar a:hover {
+
+.navbar button:hover, .navbar button:focus {
     background-color: #FFB300;
     box-shadow: 10px 5px 5px black;
+    outline: none;
 }
 
 /* Responsive design 4 phones*/
-@media (max-width: 768px) {
-    .navbar {  
-    flex-direction: row;
-    justify-content:center;
-    margin-top: 0 auto;
+@media (max-width: 700px) {
+    .navbar{
+        justify-content: center;
+        margin-bottom:-10px;
     }
-    .navbar a {
+    .navbar button{
         font-size:10px;
-        text-align: center;
-        scroll-behavior:smooth;
+        justify-self:center;
+        padding: 10px;
+        margin: 5 auto;
+        text-align:justify;
+        width:80px;
+    }
+    .logo img{
+        width:80px;
+    }
+    .logo img{
+        border: none;
+        padding:5px;
     }
 }
 
@@ -122,7 +135,7 @@ h3{
     font-size: 50px;
     text-align:center;
 }
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     #headline {
         font-size: 30px;
         text-align:center;
@@ -154,7 +167,7 @@ h3{
 }
 
 /* Responsive design 4 phones*/
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .pBody {
     margin-left: 1%;
     margin-right: 1%;
@@ -218,7 +231,7 @@ h3{
 }
 /*Responsive Design 4 phones */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     html{
         overflow-x:hidden;
     }
@@ -322,7 +335,7 @@ footer a:hover{
 
 /* Responsive design 4 phones */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .gridBox {
         margin-top:10px;
         grid-template-columns: 1fr;
@@ -383,7 +396,7 @@ footer a:hover{
 
 /*Responsive designs 4 phones*/
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .backButton {
         bottom: 10px;
         right: 10px;
