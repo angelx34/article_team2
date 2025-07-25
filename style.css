@@ -222,6 +222,8 @@ h3{
 .mainLeft, .mainRight{
     height:100%;
     box-sizing: border-box;
+    border:#FFB300 5px solid;
+    
 }
 
 .mainRight {
