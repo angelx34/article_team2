@@ -34,7 +34,7 @@ h3{
     background-color: black;
     border-top-right-radius: 50%;
     border-bottom-right-radius:50%;
-    border:5px black outset;
+    border:5px #EF7D01 solid;
     border-bottom-left-radius:50%; 
 }
 
@@ -67,6 +67,7 @@ h3{
     z-index: 1;
     transition: opacity 0.5s ease;
     pointer-events: none;
+    border-bottom:#EF7D01 solid 2px;
 }
 
 .navbar.visible {
@@ -91,8 +92,8 @@ h3{
 }
 
 .navbar button:hover, .navbar button:focus {
-    background-color: #FFB300;
-    box-shadow: 10px 5px 5px black;
+    background-color: #EF7D01;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     outline: none;
 }
 
@@ -223,7 +224,7 @@ h3{
     height:100%;
     box-sizing: border-box;
     border:#FFB300 5px solid;
-    
+
 }
 
 .mainRight {
