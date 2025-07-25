@@ -10,12 +10,15 @@ body{
     margin: 0;
     padding: 0;
 }
+
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
+
 html{
     scroll-behavior:smooth;
 }
+
 body, html{
     height:100%;
     scrollbar-color:#FCEC87;
@@ -29,15 +32,15 @@ h3{
     font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     font-weight:100;
 }
+
 .eyeLogo{
     vertical-align:middle;
     background-color: black;
     border-top-right-radius: 50%;
     border-bottom-right-radius:50%;
-    border:5px #EF7D01 solid;
     border-bottom-left-radius:50%; 
+    border:3px #EF7D01 solid;
 }
-
 
 .logo img{
     width:83px;
@@ -109,7 +112,7 @@ h3{
         justify-self:center;
         padding: 10px;
         margin: 5 auto;
-        text-align:justify;
+        text-align:center;
         width:80px;
     }
     .logo img{
@@ -118,6 +121,14 @@ h3{
     .logo img{
         border: none;
         padding:5px;
+        border:3px #EF7D01 solid;
+    }
+}
+
+@media(max-width: 400px){
+    .navbar{
+        display:grid;
+        grid-template-columns: repeat(4, 20%);
     }
 }
 
