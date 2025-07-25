@@ -102,6 +102,9 @@ h3{
 
 /* Responsive design 4 phones*/
 @media (max-width: 700px) {
+    html{
+        overflow-x:hidden;
+    }
     .navbar{
         display:inline-flex;
         justify-content: center;
@@ -126,6 +129,9 @@ h3{
 }
 
 @media(max-width: 400px){
+    html{
+        overflow-x:hidden;
+    }
     .navbar{
         display:grid;
         grid-template-columns: repeat(4, 20%);
