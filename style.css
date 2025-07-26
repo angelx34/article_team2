@@ -1,209 +1,99 @@
+/* variables for css doc */
+:root {
+    --primary: #E65100;
+    --secondary: #FFB300;
+    --light: #ffffff;
+    --dark: #333;
+    --text-light: #666;
+}
+/* general selector */
 * {
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color:#FCEC87;
-}
-body, html{
-    height:100%;
-}
-
-.eyeLogo{
-    vertical-align:middle;
-    background-color: black;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius:50%;
-    border:5px black solid;
-    border-bottom-left-radius:50%; 
-}
-
-
-.logo img{
-    width:83px;
-}
-
-.logo{
-    float:left;
-    position: fixed;
-    display:flex;
-    z-index:10;
-}
-
-.navbar {
-    background-color: #E65100;
-    overflow: auto;
-    position:fixed;
-    width:100%;
-    flex-wrap:wrap;
-    justify-content:space-evenly;
-    flex-direction:row;
-    display:inline-flex;
-    vertical-align: middle;
-    margin-left:50px;
-    opacity: 0;
-    top:-8px;
-    z-index:1;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.navbar.visible {
-    opacity: 0.9;
-    pointer-events: auto;
-}
-
-.navbar a {
-    width: 10%;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    align-self: center;
-    padding: 14px;
-    text-align:center;
-    margin: 5px;
-}
-  
-.navbar a:hover {
-    background-color: #FFB300;
-    box-shadow: 10px 5px 5px black;
-}
-
-/* Responsive design 4 phones*/
-@media (max-width: 768px) {
-    .navbar {
-    flex-direction: row;
-    justify-content: center;
-    font-size: 10px;
-    }
-
-    .navbar a {
-        font-size:15px;
-        text-align: center;
-    }
-}
-
-.cover{
-    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
-    text-align: center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100%;
-    width:100%;
-    background-position: center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    font-size: 20px;
-    background-color: #FCEC87;
-}
-
-#headline{
-    color: white;
-    font-size: 50px;
-    text-align:center;
-}
-@media (max-width: 768px) {
-    #headline {
-        font-size: 30px;
-        text-align:center;
-    }
-}
-
-.IntroSection{
-    font-size: 20px;
-    padding: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-
-.byline{
-    text-align: center;
-    font-size: 20px;
-    padding-bottom: 20px;
-    margin-left:5%;
-    margin-right:5%;
-    font-style: italic;
-}
-
-
-.pBody {
-  text-align: left;
-  padding: 20px;
-  margin-left: 30%;
-  margin-right: 30%;
-  font-size: 20px;
-}
-
-/* Responsive design 4 phones*/
-@media (max-width: 768px) {
-  .pBody {
-    margin-left: 1%;
-    margin-right: 1%;
-    font-size: 19px;
-  }
-}
-
-
-.main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px;
-    align-items: start;
-    height: 800px;
-    padding: 40px;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
-    position: relative;
-  }
-  
-  
-  .mainLeft {
-    height: fit-content;
-    background-color: yellow;
-    padding: 40px;
-    
-  }
-  
-  
-  .mainRight {
-    max-height: calc(100vh - 80px); 
-    overflow-y: auto;
-    background-color: lightblue;
-    padding: 20px;
-    
-  }
-  
-
- /* .main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px;
-    row-gap: 40px;
-    height: 800px;
-    
+}
+/* actual website body */
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: var(--secondary);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.mainLeft{
-    flex: 1;
-    background-color: yellow;
-}
-.mainRight{
-    flex: 1;
-    padding: 100px;
-    background-color: lightblue;
-}    */
-
-footer{
+/* major website container */
+.container {
     width: 100%;
-    text-align:center;
-    font-size: 20px;
-    color:black;
+    max-width: 1300px;
+    padding: 1rem;
+    margin: auto;
+    align-items: center;
+}
+/* navigation bar */
+.navbar {
+    top: 0;
+    position: fixed;
+    background-color: var(--light);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    z-index: 1000;
+    
+    /* Start completely hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    
+    /* Multiple transition properties for better compatibility */
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    
+    /* Force hardware acceleration */
+    -webkit-transform: translateY(-100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.navbar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+/* images inside nav bar */
+nav img {
+    height: 80px;
+}
+/* Contact button */
+.contact {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    border-radius: 10px;
+}
+/* change color when mouse hovers over button */
+.contact:hover {
+    background: var(--primary);
+}
 
-}
-footer a{
+/* anchor tag */
+a {
+    color: var(--dark);
     text-decoration: none;
-    color:black;
 }
-footer a:hover{
-    color:#E65100;
+/* big image with title */
+.title {
+    text-align: center;
+    align-content: center;
+    color: var(--light);
+    font-size: 40px;
+    height: 800px;
+    background-image: url("images/pexels-pixabay-372490.jpg");
+    background-size: cover;
 }

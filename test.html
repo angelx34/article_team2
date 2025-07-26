@@ -1,3 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Debug console for mobile testing */
+  .debug {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    z-index: 2000;
+    max-width: 300px;
+    font-family: monospace;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    height: 60px;
+    z-index: 1000;
+    
+    /* Start completely hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    
+    /* Multiple transition properties for better compatibility */
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    
+    /* Force hardware acceleration */
+    -webkit-transform: translateY(-100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .navbar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+  
+  .navbar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 16px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .navbar a:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  
+  .hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .content {
+    height: 2000px;
+    padding: 20px;
+    background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+  }
+  
+  .section {
+    padding: 50px 20px;
+    margin: 50px 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Mobile Navbar Test</h1>
+  <p>Scroll down to test the navbar transition</p>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="content">
+  <div class="section">
+    <h2>Section 1</h2>
+    <p>Keep scrolling to test the navbar. Check the debug info in the bottom left corner.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Section 2</h2>
+    <p>The navbar should appear when you scroll down past 150px.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Section 3</h2>
+    <p>More content to enable scrolling...</p>
+  </div>
+</div>
+
+<!-- Debug console -->
+<div class="debug" id="debug">
+  Debug info will appear here...
+</div>
+
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   var navbar = document.getElementById("navbar");
   var debug = document.getElementById("debug");
@@ -92,3 +232,7 @@ window.addEventListener('load', function() {
   console.log("User agent:", navigator.userAgent);
   console.log("Screen size:", window.innerWidth + "x" + window.innerHeight);
 });
+</script>
+
+</body>
+</html>
