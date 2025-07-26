@@ -23,6 +23,7 @@ body {
 
 /* major website container */
 .container {
+    display: grid;
     width: 100%;
     max-width: 1300px;
     padding: 1rem;
@@ -31,10 +32,17 @@ body {
 }
 /* navigation bar */
 .navbar {
+    /* Centering */
     top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80%;
     position: fixed;
+    /*  */
     background-color: var(--light);
     align-items: center;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -76,6 +84,7 @@ nav img {
     justify-content: center;
     width: 6rem;
     border-radius: 10px;
+    align-self: right;
 }
 /* change color when mouse hovers over button */
 .contact:hover {
@@ -83,7 +92,7 @@ nav img {
 }
 
 /* anchor tag */
-a {
+.navbar a {
     color: var(--dark);
     text-decoration: none;
 }
@@ -94,6 +103,19 @@ a {
     color: var(--light);
     font-size: 40px;
     height: 800px;
-    background-image: url("images/pexels-pixabay-372490.jpg");
+    background-image: url("images/2025-Gala-07.webp");
     background-size: cover;
+}
+
+.writing{
+    text-align: center;
+    color: var(--dark);
+    font-size: 20px;
+    padding: 2rem;
+}
+
+footer {
+    border-radius: 10px;
+    background-color: var(--light);
+    padding: 2rem 1rem;
 }
