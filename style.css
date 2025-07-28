@@ -113,7 +113,7 @@ h3{
     .navbar button{
         font-size:10px;
         justify-self:center;
-        padding: 10px;
+        padding: 15px;
         margin: 5 auto;
         text-align:center;
         width:80px;
@@ -339,12 +339,16 @@ footer a:hover{
     min-height: 0;
     margin-right: 5px;
     transition: box-shadow 0.2s;
+    overflow:auto;
+    overflow-x:hidden;
+    scrollbar-width: none;
+    scrollbar-gutter: none;
 }
 
 .itemContainer:hover {
     box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230,81,0,0.22);
     background: #fff8d1;
-    z-index: 2;
+    z-index: 0;
     transition: box-shadow 0.2s, background 0.2s;
 }
 
@@ -362,6 +366,7 @@ footer a:hover{
     display: block;
     margin: 0 auto;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    
 }
 
 .itemContainer .wineryText {
