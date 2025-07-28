@@ -98,8 +98,11 @@ nav img {
 }
 /* big image with title */
 .title {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     align-content: center;
+    background-color: gray ;
     color: var(--light);
     font-size: 40px;
     height: 800px;
@@ -107,15 +110,136 @@ nav img {
     background-size: cover;
 }
 
-.writing{
+.title p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/* article section */
+
+.writingPlusPicture{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* for setup */
+.writingSection {
+    flex: 1 1 300px;
+    min-width: 280px;
+    padding: 2rem;
+    border-radius: 15px;
+    
+}
+
+/* for text styling */
+.writing, .writingSection {
     text-align: center;
     color: var(--dark);
     font-size: 20px;
     padding: 2rem;
 }
 
+#image{
+    flex: 1 1 300px;
+    min-width: 280px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50% auto;
+    background-position: right 0%;
+    background-image: url("images/pexels-pixabay-372490.jpg");
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: medium;
+    }
+    .title p {
+        font-size: 30px;
+    }
+    #image {
+        min-height: 60vh;
+        background-size: cover;
+        background-position: center;
+    }
+}
+/* Game Advertise */
+.Advertise {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Adjust spacing between grid items */
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* Make sure each advertisement item fills the grid cell properly */
+.Advertise > div {
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Adaptive height - each item will size based on content */
+}
+
+.Game {
+    width: 100%;
+    min-height: 200px; /* Set a minimum height for the image containers */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#game1 {
+    background-image: url("images/danielLiuGame.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#game2 {
+    background-image: url("images/solomonGame.png");
+}
+
+#game3 {
+    background-image: url("images/anthonyImage.png");
+}
+
+/* Responsive design - stack on smaller screens */
+@media (max-width: 768px) {
+    .Advertise {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .Advertise {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+    
+    .mainLeft {
+        background-size: cover;
+    }
+}
+/* Footer */
 footer {
     border-radius: 10px;
     background-color: var(--light);
     padding: 2rem 1rem;
+    margin-top: 30px;
 }
