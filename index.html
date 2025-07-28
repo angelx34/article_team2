@@ -6,16 +6,18 @@
     <title>article2</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
+    <!--Imported a font for text. -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<!--Logo container-->
 <div class ="logo">
+    <!--Actual logo image inside a href tag.-->
     <a href="https://www.opportunitynetwork.org" target="_blank">
         <img style="height:80px" class="eyeLogo" src="images\OppNet Logo_Circle.svg">
     </a>
 </div>
-
+<!--Navigation bar that works through js in buttons. -->
 <div class="navbar" id="navBar">
     <button onclick="document.getElementById('byLine').scrollIntoView({ behavior: 'smooth' });">Para 1</button>
     <button onclick="document.getElementById('mainSection').scrollIntoView({ behavior: 'smooth' });">Main Sect</button>
@@ -26,16 +28,17 @@
 <div class="backButton">
     <img src="images/black-up-arrow-png-6.png" alt="Back" style="height:24px; width:24px;" onclick="document.getElementById('cover').scrollIntoView({ behavior: 'smooth' });">
 </div>
-
+<!--Cover page, the image is set in CSS.--> 
 <div class="cover" id="cover">
     <h1 id ="headline">
         TEMPLATE HEADER
     </h1>
 </div>
+<!--Credits of cover. -->
 <div class = "coverCredit">
     <p>COURTESY OF WHOEVER TOOK PHOTO</p>
 </div>
-
+<!--Intro section, this applies also to the ending paragraph of the article. -->
 <div class = "IntroSection">
     <div class = "byline" id = "byLine">
         <p>"By JOHN DOE"</p>
@@ -70,11 +73,13 @@
     </div>
 </div >
 
+<!--The main section (Image on left, Text on right) -->
 <div class = "main" id="mainSection">
     <div class = "mainLeft">
         <img src = "https://media.istockphoto.com/id/1369953931/photo/meeting-with-business-people-to-discuss-and-brainstorm-ideas-on-financial-reports-the-concept.jpg?s=612x612&w=0&k=20&c=Lt9i408PQJcLSSWtiUIwNpLP5NU3D0aklhGW1KcMS5w=">
         <p>Courtesy of whoever took photo.</p>
     </div>
+    <!--This entire paragraph can be put into one P tag.-->
     <div class = "mainRight" id = "mainRight">
         <h3>Right Side</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -168,8 +173,9 @@
 <div class = "wineryMain" id ="wineMain">
     <h3>Games from OppNet!</h3>
 
+<!--The grid element for the winery games.-->
 <div class ="gridBox">
-
+    <!--Each of these games are set in an item container which is apart of the gridbox. Each itemcontainer has one title, image linking to game and a blurb.-->
     <div class = "itemContainer">
         <h4 class ="wineryTitle">Next Steps: Your Post-College Adventure!</h4>
         <a href ="https://geral8212.github.io/postgradplanning-twine/" target="_blank">
@@ -199,6 +205,8 @@
 </div>
 
 <br>
+
+<!--Footer of the page.-->
 <footer>
     <p class ="footer" id="foot"> --------- </p>
     <p>Created by <a href="https://github.com/salwajid81" target="_blank">Saajid</a> and <a href="https://github.com/angelx34" target="_blank">Angelica</a>. <br>
