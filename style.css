@@ -450,6 +450,15 @@ footer a:hover{
         height: auto;
         margin: 0;
     }
+    .itemContainer:hover, .itemContainer:active, .itemContainer:focus{
+        box-shadow:
+        0 -4px 0 0 #FFB300, /* top edge */
+        0 4px 0 0 #FFB300,  /* bottom edge */
+        0 8px 32px rgba(230,81,0,0.22); 
+        background: #fff8d1;
+        z-index: 0;
+        transition: box-shadow 0.2s, background 0.2s;
+    }
     .itemContainer p {
         font-size: 16px;
         margin: 8px 0;
