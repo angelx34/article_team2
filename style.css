@@ -1,7 +1,3 @@
-* {
-    
-}
-
 /*Ensuring theres no scrolling sideways of the body and the scrollbar isn't visible until scroll. */
 body{
     background-color:#FCEC87;
@@ -24,10 +20,12 @@ body, html{
     height:100%;
     scrollbar-color:#FCEC87;
 }
+
 /*Making all paragraphs have said font. IF YOU WANT TO TWEAK FONTS DO IT HERE! */
 p{
     font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
 }
+
 /*Same as above except for header tags.*/
 h3{
     font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
@@ -43,11 +41,13 @@ h3{
     border-bottom-left-radius:50%; 
     border:3px #EF7D01 solid;
 }
+
 /*How big the image of said logo is. */
 .logo img{
     width:83px;
     padding:5px;
 }
+
 /*Makes sure logo container is in position. */
 .logo{
     float:left;
@@ -55,6 +55,7 @@ h3{
     display:flex;
     z-index:10;
 }
+
 /*Navbar container fixed to top and made sure to fit on desktop. */
 .navbar {
     background-color: #E65100;
@@ -74,11 +75,13 @@ h3{
     pointer-events: none;
     border-bottom:#EF7D01 solid 2px;
 }
+
 /*This is for Javascript */
 .navbar.visible {
-    opacity: 0.9;
+    opacity: 0.9; /*How much opacity does the navbar have when it appears on screen. */
     pointer-events: auto;
 }
+
 /*The button of the navbar*/
 .navbar button {
     width: 10%;
@@ -88,13 +91,16 @@ h3{
     font-size: 17px;
     align-self: center;
     padding: 14px;
-    text-align: center;
+    text-align: left;
+    right: 5px;
+    left: 5px;
     margin: 5px;
     font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s, box-shadow 0.2s;
 }
+
 /*If hovered over, effects take place. */
 .navbar button:hover, .navbar button:focus {
     background-color: #EF7D01;
@@ -129,6 +135,7 @@ h3{
         border:3px #EF7D01 solid;
     }
 }
+
 /*Responsive design 4 smaller phones. */
 @media(max-width: 400px){
     html{
@@ -139,6 +146,7 @@ h3{
         grid-template-columns: repeat(4, 20%);
     }
 }
+
 /*cosmetics of cover. Can be fixed*/
 .cover{
     background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
@@ -155,12 +163,14 @@ h3{
     background-color: #FCEC87;
     
 }
+
 /*Making sure headline is white and bolded. */
 #headline{
     color: white;
     font-size: 50px;
     text-align:center;
 }
+
 /*Making sure headline works on phones. */
 @media (max-width: 700px) {
     #headline {
@@ -168,11 +178,13 @@ h3{
         text-align:center;
     }
 }
+
 /*stylizing fonts */
 .IntroSection{
     font-size: 20px;
     padding: 20px;
 }
+
 /*stylizing fonts */
 .byline{
     text-align: center;
@@ -182,6 +194,7 @@ h3{
     margin-right:5%;
     font-style: italic;
 }
+
 /*stylizing fonts*/
 .pBody {
   text-align: left;
@@ -200,6 +213,7 @@ h3{
     font-size: 19px;
   }
 }
+
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
 .main {
     display: grid;
@@ -212,14 +226,16 @@ h3{
     margin-left:-3%;
     margin-right:-3%;
     position: relative;
-  }
-/*Stylizing mainleft */
+}
+
+/*Stylizing mainLeft */
 .mainLeft {
     background-color: #667B82;
     padding: 40px;
     vertical-align:text-bottom;
     border-radius:0.5%;
 }
+
 /*Ensuring image covers the div and has cosmetics */
 .mainLeft img{
     display: block;
@@ -230,6 +246,7 @@ h3{
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
 /*The credits of photo. Stylizing fonts. */
 .mainLeft p{
     font-size:15px;
@@ -238,6 +255,7 @@ h3{
     font-style: italic;
     color:white;
 }
+
 /*Making both have same height and attributes. */
 .mainLeft, .mainRight{
     height:100%;
@@ -245,29 +263,32 @@ h3{
     border:#FFB300 5px solid;
 
 }
-/*Stylizing mainright*/
+
+/*Stylizing mainRight*/
 .mainRight {
     border-radius:0.5%;
-    overflow-y: auto; /*Making mainright scrollable */
+    overflow-y: auto; /*Making mainRight scrollable */
     background-color: #FED133;
     padding: 20px;
     scrollbar-width: none;
     font-size: 20px;   
 }
-/*Making mainright better scrollable */
+
+/*Making mainRight better scrollable */
 .mainRight::-webkit-scrollbar {
     display: none;
 }
+
 .mainRight {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
+
 .mainRight h3{
     text-align:center;
 }
 
 /*Responsive Design 4 phones */
-
 @media (max-width: 700px) {
     .main{
         display:block;
@@ -299,6 +320,7 @@ h3{
 #secondParagraph{
     margin-top:-50px;
 }
+
 /*Stylizing footer */
 footer{
     width: 100%;
@@ -306,11 +328,13 @@ footer{
     font-size: 20px;
     color:black;
 }
+
 /* the a href tag of footer. */
 footer a{
     text-decoration: none;
     color:black;
 }
+
 /*when hover these attributes take place. */
 footer a:hover{
     color:#E65100;
@@ -318,7 +342,8 @@ footer a:hover{
     border-radius:10%;
     transform: translateY(-2px) scale(1.04);
 }
-/*stylizing gridbox for winery games.*/
+
+/*stylizing gridBox for winery games.*/
 .gridBox{
     display:grid;
     grid-auto-rows: 1fr;
@@ -326,12 +351,14 @@ footer a:hover{
     grid-template-columns:1fr 1fr 1fr;
     text-align:center;
 }
+
 /*the header tag of winery games. */
 .wineryMain h3{
     text-align:center;
     font-size: 30px;
 }
-/*making each itemcontainer have same attributes */
+
+/*making each itemContainer have same attributes */
 .itemContainer {
     background: #fffbe6;
     padding: 18px 12px 16px 12px;
@@ -350,19 +377,22 @@ footer a:hover{
     scrollbar-width: none;
     scrollbar-gutter: none;
 }
+
 /*when hovered, attributes take place as well as a transition into attributes. */
-.itemContainer:hover {
+.itemContainer:hover, .itemContainer:focus, .itemContainer:active {
     box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230,81,0,0.22);
     background: #fff8d1;
     z-index: 0;
     transition: box-shadow 0.2s, background 0.2s;
 }
+
 /*stylizing fonts. */
 .itemContainer h4 {
     font-size: 20px;
     margin: 10px 0;
     text-align: center;
 }
+
 /*Making image the same on all and  */
 .itemContainer img{
     border-radius:10px;
@@ -372,13 +402,22 @@ footer a:hover{
     display: block;
     margin: 0 auto;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
-    
 }
 
+/*Makes image pop when hovered or touched on phone */
+.itemContainer img:hover, .itemContainer img:focus, .itemContainer img:active {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}   
+/*font stylizing of blurb. */
 .itemContainer .wineryText {
     margin-top: 16px;
     font-size:15px;
 }
+
 /*spacing header from the top of winery section.*/
 .wineryMain{
     padding-bottom: 4%;
@@ -389,32 +428,33 @@ footer a:hover{
 @media (max-width: 700px) {
     .gridBox {
         margin-top:10px;
-        grid-template-columns: 1fr;
-        gap: 150px;
+        display: flex;
+        flex-direction: row;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        align-items: stretch; /* or use center/flex-start based on preference */
+        overflow-x: auto;
     }
     .itemContainer {
-        width: 100%;
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        width: 300px;
         height: auto;
-        margin: 0 auto;
+        margin: 0;
     }
-    .itemContainer p{
+    .itemContainer p {
         font-size: 16px;
         margin: 8px 0;
-        text-align:left;
-        margin: 0 auto;
+        text-align: left;
     }
+
     .itemContainer img {
         height: 250px;
-        width: 300px;
-        margin: 0 auto;
-        max-width: 320px;
-    }
-    #game3{
-        margin-top: -100px;
-        margin-bottom: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
 }
-/*making backbutton affixed to bottom right and stylizing it. */
+/*making backButton affixed to bottom right and stylizing it. */
 .backButton {
     position: fixed;
     bottom: 20px;
@@ -430,12 +470,14 @@ footer a:hover{
     transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
     outline: none;
 }
+
 /*sizing the image tag inside button. */
 .backButton img {
     height: 20px;
     vertical-align: middle;
     border-radius: 100%;
 }
+
 /*when hovering, attributes will take place as well as an animation. */
 .backButton:hover, .backButton:focus, .backButton:active{
     background-color: #FFB300;
@@ -445,7 +487,6 @@ footer a:hover{
 }
 
 /*Responsive designs 4 phones*/
-
 @media (max-width: 700px) {
     .backButton {
         bottom: 10px;
@@ -455,7 +496,7 @@ footer a:hover{
     }
 }
 
-/*This isn't being used, i just have it imported incase needed */
+/*This isn't being used, i just have it imported incase needed. What this animation does is make it so that the item being animated slides in from the bottom to being in view.*/
 @keyframes slideInFromBottom {
     0% {
         transform: translateY(100%);
