@@ -1,226 +1,178 @@
+:root {
+    --primary: #E65100;
+    --secondary: #FFB300;
+    --third: #039BE5;
+    --light: #ffffff;
+    --dark: #000;
+    --text-light: #666;
+    /* Additional Colors */
+    --cadetblue: #49A2A4;
+    --yellowGreen: #A7B813;
+    --slateGray: #667B82;
+    --limeGreen: #30C231;
+    /* This ain't brown */
+    --grayedRed: #C23048;
+    --darkSlateBlue: #4052A0;
+    --mediumPurple: #8166D1;
+    --slateViolet: #8C639D;
+}
+
+/* Universal */
+* {
+    font-family: Heebo;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Nav Bar */
+.navbar {
+    /* Centering */
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80%;
+    position: fixed;
+    /*  */
+    background-color: var(--light);
+    align-items: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    z-index: 1000;
+
+    /* Start completely hidden */
+    opacity: 0;
+    visibility: visible;
+    transform: translateY(0);
+
+    /* Multiple transition properties for better compatibility */
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+
+    /* Force hardware acceleration */
+    -webkit-transform: translateY(-100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.navbar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+
+/* images inside nav bar */
+nav img {
+    height: 80px;
+}
+
+/* anchor tag */
+.navbar a {
+    color: var(--dark);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.navbar a:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/* Locks navbar on mobile DONT TOUCH*/
+@media (max-width: 700px) {
+    .navbar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* End of Nav Bar */
+
+
 /*Ensuring theres no scrolling sideways of the body and the scrollbar isn't visible until scroll. */
-body{
-    background-color:#FCEC87;
-    overflow-x:hidden;
+body {
+    background-color: var(--secondary);
+    overflow-x: hidden;
     scrollbar-width: none;
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
+
 }
+
 /*Ensuring that scrollbar doesn't show up until scroll*/
 body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
+    /* Chrome, Safari */
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body, html{
-    height:100%;
-    scrollbar-color:#FCEC87;
-}
-
-/*Making all paragraphs have said font. IF YOU WANT TO TWEAK FONTS DO IT HERE! */
-p{
-    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+body,
+html {
+    height: 100%;
+    scrollbar-color: #FCEC87;
 }
 
 /*Same as above except for header tags.*/
-h3{
-    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
-    font-weight:100;
-}
-
-/*Border area of logo as well as background color can be tweaked here.*/
-.eyeLogo{
-    vertical-align:middle;
-    background-color: black;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius:50%;
-    border-bottom-left-radius:50%; 
-    border:3px #EF7D01 solid;
-}
-
-/*How big the image of said logo is. */
-.logo img{
-    width:83px;
-    padding:5px;
-}
-
-/*Makes sure logo container is in position. */
-.logo{
-    float:left;
-    position: fixed;
-    display:flex;
-    z-index:10;
-}
-.logo img:hover, .logo img:focus, .logo img:active{
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-/*Navbar container fixed to top and made sure to fit on desktop. */
-.navbar {
-    background-color: #E65100;
-    overflow: auto;
-    position: fixed;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-direction: row;
-    display: inline-flex;
-    vertical-align: middle;
-    margin-left: 50px;
-    opacity: 0;
-    top: -8px;
-    z-index: 1;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-    border-bottom:#EF7D01 solid 2px;
-}
-
-/*This is for Javascript */
-.navbar.visible {
-    opacity: 0.9; /*How much opacity does the navbar have when it appears on screen. */
-    pointer-events: auto;
-}
-
-/*The button of the navbar*/
-.navbar button {
-    width: 10%;
-    color: white;
-    background: none;
-    border: none;
-    font-size: 17px;
-    align-self: center;
-    padding: 14px;
-    text-align: center;
-    right: 5px;
-    left: 5px;
-    margin: 5px;
-    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius:10%;
-}
-
-/*If hovered over, effects take place. */
-.navbar button:hover, .navbar button:focus, .navbar button:active {
-    background-color: #EF7D01;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    outline: none;
-    transform: scale(1.05);
-    filter: brightness(1.1) contrast(1.1);
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-/* Responsive design 4 phones*/
-@media (max-width: 700px) {
-    html{
-        overflow-x:hidden;
-    }
-    .navbar{
-        display:inline-flex;
-        justify-content: center;
-        margin-bottom:-10px;
-    }
-    .navbar button{
-        font-size:10px;
-        justify-self:center;
-        padding: 15px;
-        margin: 5 auto;
-        text-align:center;
-        width:80px;
-    }
-    .logo img{
-        width:80px;
-    }
-    .logo img{
-        border: none;
-        padding:5px;
-        border:3px #EF7D01 solid;
-    }
-}
-
-/*Responsive design 4 smaller phones. */
-@media(max-width: 400px){
-    html{
-        overflow-x:hidden;
-    }
-    .navbar{
-        display:grid;
-        grid-template-columns: repeat(4, 20%);
-    }
+h3 {
+    font-weight: 100;
 }
 
 /*cosmetics of cover. Can be fixed*/
-.cover{
+.cover {
     background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
     text-align: center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100%;
-    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
     background-position: center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    font-size: 20px;
-    background-color: #FCEC87;
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--secondary);
+
 }
 
 /*Making sure headline is white and bolded. */
-#headline{
+#headline {
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     font-size: 50px;
-    text-align:center;
-}
-
-/*Making sure headline works on phones. */
-@media (max-width: 700px) {
-    #headline {
-        font-size: 30px;
-        text-align:center;
-    }
+    text-align: center;
 }
 
 /*stylizing fonts */
-.IntroSection{
-    font-size: 20px;
+.IntroSection {
     padding: 20px;
 }
 
 /*stylizing fonts */
-.byline{
+.byline {
     text-align: center;
-    font-size: 20px;
-    padding-bottom: 20px;
-    margin-left:5%;
-    margin-right:5%;
+    /* margin: top-bottom, left-right; */
+    margin: 10% 30%;
     font-style: italic;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
+    border-radius: 10px;
 }
 
-/*stylizing fonts*/
 .pBody {
-  text-align: left;
-  padding: 20px;
-  margin-left: 30%; /*IF YOU WANNA TWEAK THE GAP BTWN WEBSITE AND TEXT TWEAK THIS AND MARGIN-RIGHT! */
-  bottom:25%;
-  margin-right: 30%;
-  font-size: 20px;
-}
-
-/* Responsive design 4 phones*/
-@media (max-width: 700px) {
-  .pBody {
-    margin-left: 2%;
-    margin-right: 2%;
-    font-size: 19px;
-  }
+    padding: 0% 7%;
 }
 
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
@@ -232,22 +184,20 @@ h3{
     align-items: start;
     height: 800px;
     padding: 40px;
-    margin-left:-3%;
-    margin-right:-3%;
+    margin-left: -3%;
+    margin-right: -3%;
     position: relative;
 }
 
 /*Stylizing mainLeft */
 .mainLeft {
-    background-color: #667B82;
-    padding: 40px;
-    vertical-align:text-bottom;
-    border-radius:0.5%;
+    vertical-align: text-bottom;
+    border-radius: 0.5%;
 }
 
 /*Ensuring image covers the div and has cosmetics */
-.mainLeft img{
-    display: block;
+.mainLeft img {
+    display: flex;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -257,30 +207,27 @@ h3{
 }
 
 /*The credits of photo. Stylizing fonts. */
-.mainLeft p{
-    font-size:15px;
-    text-align:center;
+.mainLeft p {
+    font-size: 15px;
+    text-align: center;
     margin-top: 10px;
     font-style: italic;
-    color:white;
+    color: white;
 }
 
 /*Making both have same height and attributes. */
-.mainLeft, .mainRight{
-    height:100%;
+.mainLeft,
+.mainRight {
+    height: 100%;
     box-sizing: border-box;
-    border:#FFB300 5px solid;
-
 }
 
 /*Stylizing mainRight*/
 .mainRight {
-    border-radius:0.5%;
-    overflow-y: auto; /*Making mainRight scrollable */
-    background-color: #FED133;
+    border-radius: 0.5%;
+    overflow-y: auto;
     padding: 20px;
     scrollbar-width: none;
-    font-size: 20px;   
 }
 
 /*Making mainRight better scrollable */
@@ -289,179 +236,207 @@ h3{
 }
 
 .mainRight {
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.mainRight h3{
-    text-align:center;
+.mainRight h3 {
+    text-align: center;
 }
 
-/*Responsive Design 4 phones */
-@media (max-width: 700px) {
-    .main{
-        display:block;
-        margin-bottom:100px;
-    }
-    .mainLeft{
-        border:#FFB300 5px solid;
-        border-top-left-radius: 10%;
-        border-top-right-radius:10%;
-        height:50%;
-        text-align: center;
-        vertical-align:text-bottom;
-        overflow:hidden;
-    }
-    .mainLeft img{  
-       margin: 0 auto;
-    }
-    .mainRight{
-        margin-top:2.5px;
-        border:#FFB300 5px solid;
-        border-bottom-right-radius:5%;
-        border-bottom-left-radius:5%;
-        float:left;
-        overscroll-behavior: contain;
-        max-height:unset;
-    }
-}
 /*Trying to make last paragraph a bit farther down from the main section. */
-#secondParagraph{
-    margin-top:-50px;
-}
-
-/*Stylizing footer */
-footer{
-    width: 100%;
-    text-align:center;
-    font-size: 20px;
-    color:black;
-}
-
-/* the a href tag of footer. */
-footer a{
-    text-decoration: none;
-    color:black;
-}
-
-/*when hover these attributes take place. */
-footer a:hover{
-    color:#E65100;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.01);
-    border-radius:10%;
-    transform: translateY(-2px) scale(1.04);
+#secondParagraph {
+    margin-top: -50px;
 }
 
 /*stylizing gridBox for winery games.*/
-.gridBox{
-    display:grid;
+.gridBox {
+    display: grid;
     grid-auto-rows: 1fr;
-    align-items:start;
-    grid-template-columns:1fr 1fr 1fr;
-    text-align:center;
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    overflow-x: auto;
+}
+
+.wineryMain {
+    background-color: var(--light);
 }
 
 /*the header tag of winery games. */
-.wineryMain h3{
-    text-align:center;
-    font-size: 30px;
+.wineryMain h3 {
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--primary);
+    font-weight: 500;
 }
 
 /*making each itemContainer have same attributes */
 .itemContainer {
-    background: #fffbe6;
-    padding: 18px 12px 16px 12px;
+    background: var(--primary);
+    padding: 18px 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    height: 360px; /*changes height of the box*/
+    height: 550px;
+    /*changes height of the box*/
     min-width: 0;
     min-height: 0;
-    margin-right: 5px;
-    transition: box-shadow 0.2s; 
-    overflow:auto; /*if text overflows out of box, makes sure you can scroll the text.*/
-    overflow-x:hidden; /*Ensuring no scroll sideways*/
+    transition: box-shadow 0.2s;
+    overflow: auto;
+    /*if text overflows out of box, makes sure you can scroll the text.*/
+    overflow-x: hidden;
+    /*Ensuring no scroll sideways*/
     scrollbar-width: none;
     scrollbar-gutter: none;
 }
 
 /*when hovered, attributes take place as well as a transition into attributes. */
-.itemContainer:hover, .itemContainer:focus, .itemContainer:active {
-    box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230,81,0,0.22);
-    background: #fff8d1;
+.itemContainer:hover,
+.itemContainer:focus,
+.itemContainer:active {
+    box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230, 81, 0, 0.22);
+    background: var(--light);
     z-index: 0;
     transition: box-shadow 0.2s, background 0.2s;
 }
 
 /*stylizing fonts. */
 .itemContainer h4 {
-    font-size: 20px;
-    margin: 10px 0;
     text-align: center;
 }
 
 /*Making image the same on all and  */
-.itemContainer img{
-    border-radius:10px;
-    width: 220px; /*tweak size if needed */
-    height: 160px;/*tweak size if needed */
+.itemContainer img {
+    border-radius: 10px;
+    width: 220px;
+    /*tweak size if needed */
+    height: 160px;
+    /*tweak size if needed */
     object-fit: cover;
     display: block;
-    margin: 0 auto;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 /*Makes image pop when hovered or touched on phone */
-.itemContainer img:hover, .itemContainer img:focus, .itemContainer img:active {
+.itemContainer img:hover,
+.itemContainer img:focus,
+.itemContainer img:active {
     transform: scale(1.05);
     filter: brightness(1.1) contrast(1.1);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-}   
+}
+
 /*font stylizing of blurb. */
 .itemContainer .wineryText {
-    margin-top: 16px;
-    font-size:15px;
+    font-size: 15px;
 }
 
-/*spacing header from the top of winery section.*/
-.wineryMain{
-    padding-bottom: 4%;
+/*Stylizing footer */
+footer {
+    background-color: var(--third);
+    width: 100%;
+    text-align: center;
+    color: var(--light);
+    padding: 10% 0%;
 }
 
-/* Responsive design 4 phones */
+/* the a href tag of footer. */
+footer a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+/*when hover these attributes take place. */
+footer a:hover {
+    color: #E65100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* MOBILE */
+/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
 @media (max-width: 700px) {
-    .gridBox {
-        margin-top:10px;
-        display: flex;
-        flex-direction: row;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        align-items: stretch; 
-        overflow-x: auto;
+    html {
+        overflow-x: hidden;
     }
+
+    .logo img {
+        width: 80px;
+        border: none;
+        padding: 5px;
+        border: 3px #EF7D01 solid;
+    }
+
+    #headline {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .main {
+        display: block;
+        margin-bottom: 100px;
+    }
+
+    .pBody {
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 19px;
+    }
+
+    .mainLeft {
+        border: #FFB300 5px solid;
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+        height: 50%;
+        text-align: center;
+        vertical-align: text-bottom;
+        overflow: hidden;
+    }
+
+    .mainLeft img {
+        margin: 0 auto;
+    }
+
+    .mainRight {
+        margin-top: 2.5px;
+        border: #FFB300 5px solid;
+        border-bottom-right-radius: 5%;
+        border-bottom-left-radius: 5%;
+        float: left;
+        overscroll-behavior: contain;
+        max-height: unset;
+    }
+
+    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
     .itemContainer {
         flex: 0 0 100%;
         scroll-snap-align: start;
         width: 300px;
         height: auto;
-        margin: 0;
     }
-    .itemContainer:hover, .itemContainer:active, .itemContainer:focus{
-        box-shadow:
-        0 -4px 0 0 #FFB300, /* top edge */
-        0 4px 0 0 #FFB300,  /* bottom edge */
-        0 8px 32px rgba(230,81,0,0.22); 
-        background: #fff8d1;
+    
+    /*when hovered, attributes take place as well as a transition into attributes. */
+    .itemContainer:hover,
+    .itemContainer:focus,
+    .itemContainer:active {
+        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
+        background: var(--primary);
         z-index: 0;
-        transition: box-shadow 0.2s, background 0.2s;
+        transition:none;
     }
+
     .itemContainer p {
         font-size: 16px;
-        margin: 8px 0;
         text-align: left;
     }
 
@@ -469,59 +444,5 @@ footer a:hover{
         height: 250px;
         width: 100%;
         max-width: 100%;
-    }
-}
-
-/*making backButton affixed to bottom right and stylizing it. */
-.backButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: #E65100;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 28px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-    outline: none;
-}
-
-/*sizing the image tag inside button. */
-.backButton img {
-    height: 20px;
-    vertical-align: middle;
-    border-radius: 100%;
-}
-
-/*when hovering, attributes will take place as well as an animation. */
-.backButton:hover, .backButton:focus, .backButton:active{
-    background-color: #FFB300;
-    color: #222;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-    transform: translateY(-2px) scale(1.04);
-}
-
-/*Responsive designs 4 phones*/
-@media (max-width: 700px) {
-    .backButton {
-        bottom: 10px;
-        right: 10px;
-        padding: 13px;
-        font-size: 16px;
-    }
-}
-
-/*This isn't being used, i just have it imported incase needed. What this animation does is make it so that the item being animated slides in from the bottom to being in view.*/
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
