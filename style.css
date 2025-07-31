@@ -107,7 +107,7 @@ body {
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
-    
+
 }
 
 /*Ensuring that scrollbar doesn't show up until scroll*/
@@ -174,6 +174,7 @@ h3 {
 
 .pBody {
     padding: 0% 7%;
+    margin-top: 40px;
 }
 
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
@@ -183,26 +184,24 @@ h3 {
     grid-auto-rows: 1fr;
     gap: 10px;
     align-items: start;
-    height: 800px;
+    height: max-content;
     padding: 40px;
-    margin-left: -3%;
-    margin-right: -3%;
     position: relative;
 }
 
 /*Stylizing mainLeft */
 .mainLeft {
+    margin-left: 5%;
     vertical-align: text-bottom;
-    border-radius: 0.5%;
 }
 
 /*Ensuring image covers the div and has cosmetics */
 .mainLeft img {
+    border-radius: 10px;
     display: flex;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -219,30 +218,15 @@ h3 {
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
-    height: 100%;
+    height: fit-content;
     box-sizing: border-box;
 }
 
 /*Stylizing mainRight*/
 .mainRight {
-    border-radius: 0.5%;
-    overflow-y: auto;
+    height: max-content;
+    border-radius: 10px;
     padding: 20px;
-    scrollbar-width: none;
-}
-
-/*Making mainRight better scrollable */
-.mainRight::-webkit-scrollbar {
-    display: none;
-}
-
-.mainRight {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.mainRight h3 {
-    text-align: center;
 }
 
 /*Trying to make last paragraph a bit farther down from the main section. */
@@ -286,7 +270,7 @@ h3 {
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    height: 550px;
+    height: 460px;
     /*changes height of the box*/
     min-width: 0;
     min-height: 0;
@@ -317,9 +301,9 @@ h3 {
 /*Making image the same on all and  */
 .itemContainer img {
     border-radius: 10px;
-    width: 220px;
+    width: auto;
     /*tweak size if needed */
-    height: 160px;
+    height: 200px;
     /*tweak size if needed */
     object-fit: cover;
     display: block;
@@ -384,7 +368,8 @@ footer a:hover {
     }
 
     .main {
-        display: block;
+        display: flex;
+        flex-direction: column;
         margin-bottom: 100px;
     }
 
@@ -396,8 +381,6 @@ footer a:hover {
 
     .mainLeft {
         border: #FFB300 5px solid;
-        border-top-left-radius: 10%;
-        border-top-right-radius: 10%;
         height: 50%;
         text-align: center;
         vertical-align: text-bottom;
@@ -410,12 +393,8 @@ footer a:hover {
 
     .mainRight {
         margin-top: 2.5px;
-        border: #FFB300 5px solid;
-        border-bottom-right-radius: 5%;
-        border-bottom-left-radius: 5%;
         float: left;
-        overscroll-behavior: contain;
-        max-height: unset;
+        
     }
 
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
@@ -425,7 +404,7 @@ footer a:hover {
         width: 300px;
         height: auto;
     }
-    
+
     /*when hovered, attributes take place as well as a transition into attributes. */
     .itemContainer:hover,
     .itemContainer:focus,
@@ -433,7 +412,7 @@ footer a:hover {
         box-shadow: 0 0 0 0 none, 0 0 0 0 none;
         background: var(--primary);
         z-index: 0;
-        transition:none;
+        transition: none;
     }
 
     .itemContainer p {
