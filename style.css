@@ -92,6 +92,7 @@ nav img {
         opacity: 1 !important;
         visibility: visible !important;
         transform: translateY(0) !important;
+        flex-direction: column;
     }
 }
 
@@ -106,7 +107,7 @@ body {
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
-
+    
 }
 
 /*Ensuring that scrollbar doesn't show up until scroll*/
