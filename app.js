@@ -84,6 +84,30 @@ document.addEventListener('DOMContentLoaded', function () {
             handleScroll();
         }, 3000);
     }
+    const imageEl = document.getElementById('mainLeft');
+    const triggers = document.querySelectorAll('.mainRight .trigger');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+  
+        const newSrc = entry.target.dataset.image;
+        if (imageEl.src.includes(newSrc)) return;
+  
+        // fade out → swap → fade in
+        imageEl.style.opacity = 0;
+        setTimeout(() => {
+          imageEl.src     = newSrc;
+          imageEl.style.opacity = 1;
+        }, 300);
+      });
+    }, {
+      root: null,                 // viewport
+      threshold: 0.8,             // 80% of the span must be visible
+      rootMargin: '0px 0px -20% 0px'
+    });
+  
+    triggers.forEach(span => observer.observe(span));
 });
 
 // Additional mobile debugging

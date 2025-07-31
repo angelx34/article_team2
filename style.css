@@ -17,6 +17,9 @@
     --slateViolet: #8C639D;
 }
 
+body.locked{
+    overflow:hidden;
+}
 /* Universal */
 * {
     font-family: Heebo;
@@ -40,7 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 10px;
     border-radius: 15px;
     z-index: 1000;
 
@@ -187,6 +190,7 @@ h3 {
     height: max-content;
     padding: 40px;
     position: relative;
+    background-color:#667B82;
 }
 
 /*Stylizing mainLeft */
@@ -200,19 +204,10 @@ h3 {
     border-radius: 10px;
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 650px;
     object-fit: cover;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-/*The credits of photo. Stylizing fonts. */
-.mainLeft p {
-    font-size: 15px;
-    text-align: center;
-    margin-top: 10px;
-    font-style: italic;
-    color: white;
 }
 
 /*Making both have same height and attributes. */
@@ -220,13 +215,15 @@ h3 {
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
+    background-color: #fcec87;
 }
 
 /*Stylizing mainRight*/
 .mainRight {
-    height: max-content;
+    height: 650px;
     border-radius: 10px;
     padding: 20px;
+    overflow:auto;
 }
 
 /*Trying to make last paragraph a bit farther down from the main section. */
@@ -236,16 +233,12 @@ h3 {
 
 /*stylizing gridBox for winery games.*/
 .gridBox {
-    display: grid;
-    grid-auto-rows: 1fr;
     align-items: start;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    text-align: center;    
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    align-items: stretch;
     overflow-x: auto;
 }
 
@@ -394,7 +387,6 @@ footer a:hover {
     .mainRight {
         margin-top: 2.5px;
         float: left;
-        
     }
 
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
@@ -425,4 +417,26 @@ footer a:hover {
         width: 100%;
         max-width: 100%;
     }
+    /* New footer code added */
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 10px;
+        font-size: 16px;
+  }
+
+    footer .footer,
+    footer .footer-names,
+    footer .footer-quote,
+    footer .OppNetLogo {
+        grid-column: unset;
+        text-align: center;
+        margin-bottom: 10px;
+  }
+
+    footer .OppNetLogo img {
+        width: 150px;
+        height: auto;
+  }
 }
