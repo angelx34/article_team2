@@ -1,0 +1,428 @@
+:root {
+    --primary: #E65100;
+    --secondary: #FFB300;
+    --third: #039BE5;
+    --light: #ffffff;
+    --dark: #000;
+    --text-light: #666;
+    /* Additional Colors */
+    --cadetblue: #49A2A4;
+    --yellowGreen: #A7B813;
+    --slateGray: #667B82;
+    --limeGreen: #30C231;
+    /* This ain't brown */
+    --grayedRed: #C23048;
+    --darkSlateBlue: #4052A0;
+    --mediumPurple: #8166D1;
+    --slateViolet: #8C639D;
+}
+
+/* Universal */
+* {
+    font-family: Heebo;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Nav Bar */
+.navbar {
+    /* Centering */
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80%;
+    position: fixed;
+    /*  */
+    background-color: var(--light);
+    align-items: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    z-index: 1000;
+
+    /* Start completely hidden */
+    opacity: 0;
+    visibility: visible;
+    transform: translateY(0);
+
+    /* Multiple transition properties for better compatibility */
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+
+    /* Force hardware acceleration */
+    -webkit-transform: translateY(-100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.navbar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+
+/* images inside nav bar */
+nav img {
+    height: 80px;
+}
+
+/* anchor tag */
+.navbar a {
+    color: var(--dark);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.navbar a:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/* Locks navbar on mobile DONT TOUCH*/
+@media (max-width: 700px) {
+    .navbar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        flex-direction: column;
+    }
+}
+
+/* End of Nav Bar */
+
+
+/*Ensuring theres no scrolling sideways of the body and the scrollbar isn't visible until scroll. */
+body {
+    background-color: var(--secondary);
+    overflow-x: hidden;
+    scrollbar-width: none;
+    scrollbar-gutter: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Ensuring that scrollbar doesn't show up until scroll*/
+body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    height: 100%;
+    scrollbar-color: #FCEC87;
+}
+
+/*Same as above except for header tags.*/
+h3 {
+    font-weight: 100;
+}
+
+/*cosmetics of cover. Can be fixed*/
+.cover {
+    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--secondary);
+
+}
+
+/*Making sure headline is white and bolded. */
+#headline {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 50px;
+    text-align: center;
+}
+
+/*stylizing fonts */
+.IntroSection {
+    padding: 20px;
+}
+
+/*stylizing fonts */
+.byline {
+    text-align: center;
+    /* margin: top-bottom, left-right; */
+    margin: 10% 30%;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
+    border-radius: 10px;
+}
+
+.pBody {
+    padding: 0% 7%;
+    margin-top: 40px;
+}
+
+/* The grid column for main section, making sure each divs are separated in a column on desktop. */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    align-items: start;
+    height: max-content;
+    padding: 40px;
+    position: relative;
+}
+
+/*Stylizing mainLeft */
+.mainLeft {
+    margin-left: 5%;
+    vertical-align: text-bottom;
+}
+
+/*Ensuring image covers the div and has cosmetics */
+.mainLeft img {
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/*The credits of photo. Stylizing fonts. */
+.mainLeft p {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: white;
+}
+
+/*Making both have same height and attributes. */
+.mainLeft,
+.mainRight {
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+/*Stylizing mainRight*/
+.mainRight {
+    height: max-content;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/*Trying to make last paragraph a bit farther down from the main section. */
+#secondParagraph {
+    margin-top: -50px;
+}
+
+/*stylizing gridBox for winery games.*/
+.gridBox {
+    display: grid;
+    grid-auto-rows: 1fr;
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    overflow-x: auto;
+}
+
+.wineryMain {
+    background-color: var(--light);
+}
+
+/*the header tag of winery games. */
+.wineryMain h3 {
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--primary);
+    font-weight: 500;
+}
+
+/*making each itemContainer have same attributes */
+.itemContainer {
+    background: var(--primary);
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 460px;
+    /*changes height of the box*/
+    min-width: 0;
+    min-height: 0;
+    transition: box-shadow 0.2s;
+    overflow: auto;
+    /*if text overflows out of box, makes sure you can scroll the text.*/
+    overflow-x: hidden;
+    /*Ensuring no scroll sideways*/
+    scrollbar-width: none;
+    scrollbar-gutter: none;
+}
+
+/*when hovered, attributes take place as well as a transition into attributes. */
+.itemContainer:hover,
+.itemContainer:focus,
+.itemContainer:active {
+    box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230, 81, 0, 0.22);
+    background: var(--light);
+    z-index: 0;
+    transition: box-shadow 0.2s, background 0.2s;
+}
+
+/*stylizing fonts. */
+.itemContainer h4 {
+    text-align: center;
+}
+
+/*Making image the same on all and  */
+.itemContainer img {
+    border-radius: 10px;
+    width: auto;
+    /*tweak size if needed */
+    height: 200px;
+    /*tweak size if needed */
+    object-fit: cover;
+    display: block;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*Makes image pop when hovered or touched on phone */
+.itemContainer img:hover,
+.itemContainer img:focus,
+.itemContainer img:active {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/*font stylizing of blurb. */
+.itemContainer .wineryText {
+    font-size: 15px;
+}
+
+/*Stylizing footer */
+footer {
+    background-color: var(--third);
+    width: 100%;
+    text-align: center;
+    color: var(--light);
+    padding: 10% 0%;
+}
+
+/* the a href tag of footer. */
+footer a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+/*when hover these attributes take place. */
+footer a:hover {
+    color: #E65100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* MOBILE */
+/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
+@media (max-width: 700px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    .logo img {
+        width: 80px;
+        border: none;
+        padding: 5px;
+        border: 3px #EF7D01 solid;
+    }
+
+    #headline {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
+
+    .pBody {
+        margin-left: 2%;
+        margin-right: 2%;
+        font-size: 19px;
+    }
+
+    .mainLeft {
+        border: #FFB300 5px solid;
+        height: 50%;
+        text-align: center;
+        vertical-align: text-bottom;
+        overflow: hidden;
+    }
+
+    .mainLeft img {
+        margin: 0 auto;
+    }
+
+    .mainRight {
+        margin-top: 2.5px;
+        float: left;
+        
+    }
+
+    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
+    .itemContainer {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        width: 300px;
+        height: auto;
+    }
+
+    /*when hovered, attributes take place as well as a transition into attributes. */
+    .itemContainer:hover,
+    .itemContainer:focus,
+    .itemContainer:active {
+        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
+        background: var(--primary);
+        z-index: 0;
+        transition: none;
+    }
+
+    .itemContainer p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .itemContainer img {
+        height: 250px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
