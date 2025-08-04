@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
     }
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const allTriggers = document.querySelectorAll('.trigger');
   
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     allTriggers.forEach(trigger => observer.observe(trigger));
-  });   
+});   
 
 // Additional mobile debugging
 window.addEventListener('load', function () {
