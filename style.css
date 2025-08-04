@@ -17,6 +17,9 @@
     --slateViolet: #8C639D;
 }
 
+body.locked{
+    overflow:hidden;
+}
 /* Universal */
 * {
     font-family: Heebo;
@@ -32,15 +35,16 @@
     right: 0;
     margin: 0 auto;
     width: 80%;
+    padding-left:10px;
+    padding-right:10px;
     position: fixed;
     /*  */
     background-color: var(--light);
     align-items: center;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 10px;
     border-radius: 15px;
     z-index: 1000;
 
@@ -119,7 +123,7 @@ nav img {
 }
 
 /* Locks navbar on mobile DONT TOUCH*/
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .navbar {
         opacity: 1 !important;
         visibility: visible !important;
@@ -142,7 +146,6 @@ body {
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
-
 }
 
 /*Ensuring that scrollbar doesn't show up until scroll*/
@@ -168,7 +171,7 @@ h3 {
 
 /*cosmetics of cover. Can be fixed*/
 .cover {
-    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
+    background-image: url('/images/cover.png');
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -189,6 +192,9 @@ h3 {
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 50px;
     text-align: center;
+
+    
+    visibility:hidden;
 }
 
 /*stylizing fonts */
@@ -215,17 +221,26 @@ h3 {
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
 .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
     grid-auto-rows: 1fr;
-    gap: 10px;
+    gap: 20px;
     align-items: start;
     height: max-content;
     padding: 40px;
     position: relative;
+    background-color:#667B82;
 }
 
+#main2{
+    background-color: #4052A0;
+
+}
+#main3{
+    background-color: #C23041;
+}
 /*Stylizing mainLeft */
 .mainLeft {
+    border-radius:10px;
     margin-left: 5%;
     vertical-align: text-bottom;
 }
@@ -239,6 +254,7 @@ h3 {
     object-fit: cover;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: opacity 0.6s ease, filter 0.6s ease;
 }
 
 /*The credits of photo. Stylizing fonts. */
@@ -281,6 +297,24 @@ h3 {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     align-items: stretch;
+
+    /* height: 650px;
+    border-radius: 10px;
+    padding: 20px;
+    overflow:auto;
+    background-color: #FFB300;
+}
+.mainRight p {
+    margin-left:10%;
+    margin-right:10%;
+}
+.gridBox {
+    align-items: start;
+    display: flex;
+    flex-direction:row;
+    text-align: center;    
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; */
     overflow-x: auto;
 }
 
@@ -374,6 +408,8 @@ footer {
 footer a {
     text-decoration: none;
     color: var(--light);
+    
+    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
 }
 
 /*when hover these attributes take place. */
@@ -393,7 +429,20 @@ footer a:hover {
     html {
         overflow-x: hidden;
     }
+}
+/* MOBILE */
+/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
+@media (max-width: 811px) {
+    html {
+        overflow-x: hidden;
+        scroll-behavior:smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
 
+    .cover{
+        background-image: url("images/coverMobile.png");
+    }
     .logo img {
         width: 80px;
         border: none;
@@ -410,6 +459,15 @@ footer a:hover {
         display: flex;
         flex-direction: column;
         margin-bottom: 100px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 30px;
+        text-align: center;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap:10px;
     }
 
     .pBody {
@@ -418,16 +476,33 @@ footer a:hover {
         font-size: 19px;
     }
 
+    /* check later */
     .mainLeft {
         border: #FFB300 5px solid;
         height: 50%;
         text-align: center;
         vertical-align: text-bottom;
+    }
+    .mainLeft, .mainRight{
+        margin-left: -0.5%;
+        margin-right: -0.5%;
+    }
+
+    .mainLeft {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height: 300px; /* or use a specific value like 300px */
+        width: 100%;
+        text-align: center;
         overflow: hidden;
     }
 
     .mainLeft img {
-        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; /* removes inline gap */
     }
 
     .mainRight {
@@ -464,4 +539,30 @@ footer a:hover {
         width: 100%;
         max-width: 100%;
     }
+    /* New footer code added */
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px 10px;
+        font-size: 16px;
+  }
+
+    footer .footer,
+    footer .footer-names,
+    footer .footer-quote,
+    footer .OppNetLogo {
+        grid-column: unset;
+        text-align: center;
+        margin-bottom: 10px;
+  }
+
+    footer .OppNetLogo img {
+        width: 150px;
+        height: auto;
+  }
+
 }
+/*ANIMATION CSS*/
+
+
