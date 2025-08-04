@@ -93,7 +93,7 @@ nav img {
 }
 
 /* Locks navbar on mobile DONT TOUCH*/
-@media (max-width: 811px) {
+@media (max-width: 500px) {
     .navbar {
         opacity: 1 !important;
         visibility: visible !important;
@@ -241,16 +241,6 @@ h3 {
         background-color: none;
     }
 }
-
-@media(max-width:467px){
-    .mainLeft img{
-        object-fit:contain;
-        box-shadow:none;
-    }
-    .mainLeft{
-        background-color:none;
-    }
-}
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
@@ -353,7 +343,51 @@ h3 {
 
 /*font stylizing of blurb. */
 .itemContainer .wineryText {
-    font-size: 15px;
+    font-size:17px;
+}
+.bibliography{
+    background-color: var(--slateGray);
+    color:white;
+}
+.bibliography h3{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.bibContainer {
+    margin-top:25px;
+    justify-content:center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.bibContainer h2{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.bibLinks{
+    margin-top:10px;
+    display:inline-block;
+    text-align:left;
+    list-style-position:inside;
+    padding:0;
+    text-align:left;
+    margin-bottom:50px;
+    font-size:17px;
+}
+
+.bibLinks a{
+    text-decoration:none;
+    color:white;
+    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
+}
+
+.bibLinks a:hover, .bibLinks a:active, .bibLinks a:focus{
+    color: #E65100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+    transform: translateY(-2px) scale(1.04);
 }
 
 /*Stylizing footer */
@@ -373,7 +407,7 @@ footer a {
 }
 
 /*when hover these attributes take place. */
-footer a:hover {
+footer a:hover, footer a:active, footer a:focus {
     color: #E65100;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
     transform: translateY(-2px) scale(1.04);
@@ -381,7 +415,23 @@ footer a:hover {
 
 /* MOBILE */
 /* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
-@media (max-width: 811px) {
+
+/*4 tablets*/
+@media (max-width: 1430px){
+    .cover{
+        background-image: url("images/coverMobile.png");
+    }
+    #headline {
+        visibility:visible;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+/*4 phones */
+@media (max-width: 500px) {
     html {
         overflow-x: hidden;
         scroll-behavior:smooth;
