@@ -294,7 +294,7 @@ h3 {
     /*changes height of the box*/
     min-width: 0;
     min-height: 0;
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, background ease-in 0.3s, border-radius 0.2s;
     overflow: auto;
     /*if text overflows out of box, makes sure you can scroll the text.*/
     overflow-x: hidden;
@@ -307,10 +307,10 @@ h3 {
 .itemContainer:hover,
 .itemContainer:focus,
 .itemContainer:active {
-    box-shadow: 0 0 0 4px #FFB300, 0 8px 32px rgba(230, 81, 0, 0.22);
+    box-shadow: 0 0 0 4px #FFB300, 0 0 32px rgba(230, 81, 0, 0.22);
     background: var(--light);
     z-index: 0;
-    transition: box-shadow 0.2s, background 0.2s;
+    border-radius: 10px;
 }
 
 /*stylizing fonts. */
@@ -345,6 +345,7 @@ h3 {
 .itemContainer .wineryText {
     font-size:17px;
 }
+
 .bibliography{
     background-color: var(--slateGray);
     color:white;
