@@ -178,7 +178,7 @@ h3 {
 
 /*cosmetics of cover. Can be fixed*/
 .cover {
-    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
+    background-image: url('images/coverDesktop.png');
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -195,10 +195,10 @@ h3 {
 
 /*Making sure headline is white and bolded. */
 #headline {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: transparent;
     font-size: 50px;
     text-align: center;
+    
 }
 
 /*stylizing fonts */
@@ -537,6 +537,8 @@ footer a:hover {
     #headline {
         font-size: 30px;
         text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, .5);
     }
 
     .articleTitle {
