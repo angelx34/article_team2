@@ -84,31 +84,56 @@ document.addEventListener('DOMContentLoaded', function () {
             handleScroll();
         }, 3000);
     }
-    const imageEl = document.getElementById('mainLeft');
-    const triggers = document.querySelectorAll('.mainRight .trigger');
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const allTriggers = document.querySelectorAll('.trigger');
+  
+    // Store original image sources for each .main block
+    const originalImages = new Map();
+  
+    document.querySelectorAll('.main').forEach(main => {
+      const img = main.querySelector('.mainLeft img');
+      if (img) {
+        originalImages.set(main, img.src);
+      }
+    });
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+        const trigger = entry.target;
+        const newSrc = trigger.dataset.image;
+        const mainContainer = trigger.closest('.main');
+        const imageEl = mainContainer?.querySelector('.mainLeft img');
+        if (!imageEl || !mainContainer) return;
   
-        const newSrc = entry.target.dataset.image;
-        if (imageEl.src.includes(newSrc)) return;
-  
-        // fade out → swap → fade in
-        imageEl.style.opacity = 0;
-        setTimeout(() => {
-          imageEl.src     = newSrc;
-          imageEl.style.opacity = 1;
-        }, 300);
+        if (entry.isIntersecting) {
+          // Trigger is in view — swap to new image
+          if (!imageEl.src.endsWith(newSrc)) {
+            imageEl.style.opacity = 0;
+            setTimeout(() => {
+              imageEl.src = newSrc;
+              imageEl.style.opacity = 1;
+            }, 300);
+          }
+        } else {
+          // Trigger is out of view — revert to original image
+          const originalSrc = originalImages.get(mainContainer);
+          if (originalSrc && !imageEl.src.endsWith(originalSrc)) {
+            imageEl.style.opacity = 0;
+            setTimeout(() => {
+              imageEl.src = originalSrc;
+              imageEl.style.opacity = 1;
+            }, 300);
+          }
+        }
       });
     }, {
-      root: null,                 // viewport
-      threshold: 0.8,             // 80% of the span must be visible
-      rootMargin: '0px 0px -20% 0px'
+      root: null,
+      threshold: 0.5
     });
   
-    triggers.forEach(span => observer.observe(span));
-});
+    allTriggers.forEach(trigger => observer.observe(trigger));
+  });   
 
 // Additional mobile debugging
 window.addEventListener('load', function () {

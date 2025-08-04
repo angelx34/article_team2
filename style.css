@@ -110,7 +110,6 @@ body {
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
-
 }
 
 /*Ensuring that scrollbar doesn't show up until scroll*/
@@ -132,11 +131,12 @@ html {
 /*Same as above except for header tags.*/
 h3 {
     font-weight: 100;
+    
 }
 
 /*cosmetics of cover. Can be fixed*/
 .cover {
-    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
+    background-image: url('/images/header.png');
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -151,14 +151,6 @@ h3 {
 
 }
 
-/*Making sure headline is white and bolded. */
-#headline {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 50px;
-    text-align: center;
-}
-
 /*stylizing fonts */
 .IntroSection {
     padding: 20px;
@@ -168,7 +160,7 @@ h3 {
 .byline {
     text-align: center;
     /* margin: top-bottom, left-right; */
-    margin: 10% 30%;
+    margin-top:30%;
     font-style: italic;
     background-color: rgba(0, 0, 0, .5);
     color: var(--light);
@@ -183,7 +175,7 @@ h3 {
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
 .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
     grid-auto-rows: 1fr;
     gap: 10px;
     align-items: start;
@@ -193,6 +185,13 @@ h3 {
     background-color:#667B82;
 }
 
+#main2{
+    background-color: #4052A0;
+
+}
+#main3{
+    background-color: #C23041;
+}
 /*Stylizing mainLeft */
 .mainLeft {
     margin-left: 5%;
@@ -208,6 +207,7 @@ h3 {
     object-fit: cover;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: opacity 0.4s ease;
 }
 
 /*Making both have same height and attributes. */
@@ -215,7 +215,7 @@ h3 {
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
-    background-color: #fcec87;
+    background-color: #FFB300;
 }
 
 /*Stylizing mainRight*/
@@ -224,11 +224,6 @@ h3 {
     border-radius: 10px;
     padding: 20px;
     overflow:auto;
-}
-
-/*Trying to make last paragraph a bit farther down from the main section. */
-#secondParagraph {
-    margin-top: -50px;
 }
 
 /*stylizing gridBox for winery games.*/
@@ -347,6 +342,10 @@ footer a:hover {
     html {
         overflow-x: hidden;
     }
+    
+    .navbar{
+        
+    }
 
     .logo img {
         width: 80px;
@@ -363,7 +362,7 @@ footer a:hover {
     .main {
         display: flex;
         flex-direction: column;
-        margin-bottom: 100px;
+        
     }
 
     .pBody {
@@ -373,7 +372,6 @@ footer a:hover {
     }
 
     .mainLeft {
-        border: #FFB300 5px solid;
         height: 50%;
         text-align: center;
         vertical-align: text-bottom;
@@ -387,6 +385,7 @@ footer a:hover {
     .mainRight {
         margin-top: 2.5px;
         float: left;
+        height:50%;
     }
 
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
@@ -439,4 +438,5 @@ footer a:hover {
         width: 150px;
         height: auto;
   }
+
 }
