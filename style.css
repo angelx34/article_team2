@@ -162,6 +162,7 @@ h3 {
 /*stylizing fonts */
 .IntroSection {
     padding: 20px;
+    padding-bottom: 5%;
 }
 
 /*stylizing fonts */
@@ -195,6 +196,16 @@ h3 {
     background-color:#667B82;
 }
 
+.articleTitle{ 
+    font-size:20px;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
+    border-radius: 10px;
+    text-align:center;
+    
+    box-sizing: border-box;
+}
+
 #main2{
     background-color: #4052A0;
 
@@ -218,14 +229,33 @@ h3 {
     object-fit: cover;
     text-align: center;
     transition: opacity 0.6s ease, filter 0.6s ease;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+@media(max-width:1348px){
+    .mainLeft img{
+        object-fit:contain;
+        box-shadow: none;
+    }
+    .mainLeft{
+        background-color: none;
+    }
+}
+
+@media(max-width:467px){
+    .mainLeft img{
+        object-fit:contain;
+        box-shadow:none;
+    }
+    .mainLeft{
+        background-color:none;
+    }
+}
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 /*Stylizing mainRight*/
@@ -235,11 +265,9 @@ h3 {
     padding: 20px;
     overflow:auto;
     background-color: #FFB300;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.mainRight p {
-    margin-left:10%;
-    margin-right:10%;
-}
+
 /*stylizing gridBox for winery games.*/
 .gridBox {
     align-items: start;
@@ -380,21 +408,28 @@ footer a:hover {
         font-size: 30px;
         text-align: center;
     }
+    .articleTitle{
+        font-size:20px;
+        width:100%;
+    }
     .main {
         display: flex;
         flex-direction: column;
         gap:10px;
     }
 
+    .mainLeft,
+    .mainRight {
+        justify-self:center;
+        align-self:center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .pBody {
         margin-left: 2%;
         margin-right: 2%;
         font-size: 19px;
-    }
-
-    .mainLeft, .mainRight{
-        margin-left: -0.5%;
-        margin-right: -0.5%;
     }
 
     .mainLeft {
@@ -416,7 +451,6 @@ footer a:hover {
 
     .mainRight {
         margin-top: 2.5px;
-        height:25;
     }
 
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
