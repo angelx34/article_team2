@@ -401,7 +401,6 @@ h3 {
     .itemContainer img {
         height: 250px;
         width: 100%;
-        max-width: 100%;
     }
     
 
@@ -565,33 +564,38 @@ footer a:hover {
         vertical-align: text-bottom;
         overflow: hidden;
     }
+    .itemContainer {
+        max-width: 100%;
+    }
     
-}
-
-
-    
-    /* New footer code added */
-    footer {
+    .gridBox {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 16px 10px;
-        font-size: 16px;
     }
+}
+    
+    /* New footer code added */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 10px;
+    font-size: 16px;
+}
 
-    footer .footer,
-    footer .footer-names,
-    footer .footer-quote,
-    footer .OppNetLogo {
-        grid-column: unset;
-        text-align: center;
-        margin-bottom: 10px;
-    }
+footer .footer,
+footer .footer-names,
+footer .footer-quote,
+footer .OppNetLogo {
+    grid-column: unset;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-    footer .OppNetLogo img {
-        width: 150px;
-        height: auto;
-  }
+footer .OppNetLogo img {
+    width: 150px;
+    height: auto;
+}
 
 
 /*ANIMATION CSS*/
