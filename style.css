@@ -298,8 +298,6 @@ h3 {
     gap: 36px;
     padding: 40px;
     box-sizing: border-box;
-    justify-items: center;
-
 }
 
 .wineryMain {
@@ -319,11 +317,11 @@ h3 {
     background: var(--primary);
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-self: top;
     align-items: center;
     box-sizing: border-box;
     height: 100%;
-    max-width: 33%;
+    max-width: 32%;
     transition: box-shadow 0.2s, background ease-in 0.3s;
     
 }
@@ -369,6 +367,44 @@ h3 {
 .itemContainer .wineryText {
     font-size: 15px;
 }
+
+    .mainRight {
+        margin-top: 2.5px;
+        max-width: 100%;
+        /* stops side scrolling with bibliography */
+        overflow-x: clip;
+    }
+    
+    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
+    .itemContainer {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        width: 300px;
+        height: auto;
+    }
+
+    /*when hovered, attributes take place as well as a transition into attributes. */
+    .itemContainer:hover,
+    .itemContainer:focus,
+    .itemContainer:active {
+        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
+        background: var(--primary);
+        z-index: 0;
+        transition: none;
+    }
+
+    .itemContainer p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .itemContainer img {
+        height: 250px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+
 
 /*Stylizing footer */
 footer {
@@ -529,43 +565,11 @@ footer a:hover {
         vertical-align: text-bottom;
         overflow: hidden;
     }
+    
 }
 
-    .mainRight {
-        margin-top: 2.5px;
-        max-width: 100%;
-        /* stops side scrolling with bibliography */
-        overflow-x: clip;
-    }
+
     
-    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
-    .itemContainer {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        width: 300px;
-        height: auto;
-    }
-
-    /*when hovered, attributes take place as well as a transition into attributes. */
-    .itemContainer:hover,
-    .itemContainer:focus,
-    .itemContainer:active {
-        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
-        background: var(--primary);
-        z-index: 0;
-        transition: none;
-    }
-
-    .itemContainer p {
-        font-size: 16px;
-        text-align: left;
-    }
-
-    .itemContainer img {
-        height: 250px;
-        width: 100%;
-        max-width: 100%;
-    }
     /* New footer code added */
     footer {
         display: flex;
