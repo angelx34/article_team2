@@ -93,7 +93,7 @@ nav img {
 }
 
 /* Locks navbar on mobile DONT TOUCH*/
-@media (max-width: 811px) {
+@media (max-width: 500px) {
     .navbar {
         opacity: 1 !important;
         visibility: visible !important;
@@ -241,17 +241,6 @@ h3 {
         background-color: none;
     }
 }
-
-@media(width<=467px){
-    .mainLeft img{
-        object-fit:contain;
-        box-shadow: none;
-    }
-    .mainLeft{
-        background-color: none;
-    }
-}
-
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
