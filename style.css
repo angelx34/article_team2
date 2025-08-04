@@ -112,13 +112,13 @@ nav img {
     color: var(--light);
 }
 
-.mobile-menu{
+.mobile-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
-.mobile-menu span{
+.mobile-menu span {
     width: 25px;
     height: 3px;
     background: var(--dark);
@@ -135,6 +135,7 @@ nav img {
         transform: translateY(0) !important;
         flex-direction: column;
     }
+
     .mobile-menu {
         display: flex;
     }
@@ -167,7 +168,7 @@ html {
 body,
 html {
     height: 100%;
-    
+
 }
 
 /*Same as above except for header tags.*/
@@ -231,26 +232,28 @@ h3 {
     height: max-content;
     padding: 40px;
     position: relative;
-    background-color:#667B82;
+    background-color: #667B82;
 }
 
-.articleTitle{ 
-    font-size:20px;
+.articleTitle {
+    font-size: 20px;
     background-color: rgba(0, 0, 0, .5);
     color: var(--light);
     border-radius: 10px;
-    text-align:left;
+    text-align: left;
     padding: 0px 10px;
     box-sizing: border-box;
 }
 
-#main2{
+#main2 {
     background-color: #4052A0;
 
 }
-#main3{
+
+#main3 {
     background-color: #C23041;
 }
+
 /*Stylizing mainLeft */
 .mainLeft {
     margin-left: 5%;
@@ -275,7 +278,7 @@ h3 {
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
-    
+
 }
 
 /*Stylizing mainRight*/
@@ -323,7 +326,7 @@ h3 {
     height: 100%;
     max-width: 32%;
     transition: box-shadow 0.2s, background ease-in 0.3s;
-    
+
 }
 
 /*when hovered, attributes take place as well as a transition into attributes. */
@@ -368,35 +371,35 @@ h3 {
     font-size: 15px;
 }
 
-    .mainRight {
-        margin-top: 2.5px;
-        max-width: 100%;
-        /* stops side scrolling with bibliography */
-        overflow-x: clip;
-    }
-    
-    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
-    .itemContainer {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        width: 300px;
-        height: auto;
-    }
+.mainRight {
+    margin-top: 2.5px;
+    max-width: 100%;
+    /* stops side scrolling with bibliography */
+    overflow-x: clip;
+}
 
-    /*when hovered, attributes take place as well as a transition into attributes. */
-    .itemContainer:hover,
-    .itemContainer:focus,
-    .itemContainer:active {
-        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
-        background: var(--primary);
-        z-index: 0;
-        transition: none;
-    }
+/* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
+.itemContainer {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    width: 300px;
+    height: auto;
+}
 
-    .itemContainer p {
-        font-size: 16px;
-        text-align: left;
-    }
+/*when hovered, attributes take place as well as a transition into attributes. */
+.itemContainer:hover,
+.itemContainer:focus,
+.itemContainer:active {
+    box-shadow: 0 0 0 0 none, 0 0 0 0 none;
+    background: var(--primary);
+    z-index: 0;
+    transition: none;
+}
+
+.itemContainer p {
+    font-size: 16px;
+    text-align: left;
+}
 
     .itemContainer img {
         height: 250px;
@@ -411,50 +414,56 @@ footer {
     width: 100%;
     text-align: center;
     color: var(--light);
-    padding: 32px 0; 
+    padding: 32px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    column-gap: 10%; 
+    column-gap: 10%;
     min-height: 80px
 }
 
-footer .footer{
+footer .footer {
     grid-column-start: 2;
     padding-bottom: 4%;
-    
+
 }
-footer .footer-title{
+
+footer .footer-title {
     grid-column-start: 2;
-    
+
 }
-footer .footer-names{
+
+footer .footer-names {
     grid-column-start: 2;
     font-size: 20px;
 
 }
-footer .footer-quote{
+
+footer .footer-quote {
     grid-column-start: 2;
     font-size: 16px;
     font-style: italic;
     color: #fff;
     margin-top: 10px;
 }
-footer p{
+
+footer p {
     font-size: 24px;
 
-    
-}
-footer .footer-names .footer-title{
-    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
-    font-weight: 400;
-    color:#fff;
-    margin-bottom: 10px;
-    
 
 }
-footer .OppNetLogo{ 
-  grid-row: 2 / span 2;
+
+footer .footer-names .footer-title {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 10px;
+
+
+}
+
+footer .OppNetLogo {
+    grid-row: 2 / span 2;
 
 
 }
@@ -504,48 +513,51 @@ footer a:hover {
 @media (max-width: 700px) {
     html {
         overflow-x: hidden;
-        scroll-behavior:smooth;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
-    
-    .cover{
+
+    .cover {
         background-image: url("images/coverMobile.png");
     }
+
     .logo img {
         width: 80px;
         border: none;
         padding: 5px;
         border: 3px #EF7D01 solid;
     }
-    
+
     .navbar ul {
-    
-    align-items: center;
-    gap: 5%;
+
+        align-items: center;
+        gap: 5%;
     }
 
     #headline {
         font-size: 30px;
         text-align: center;
     }
-    .articleTitle{
-        font-size:20px;
-        width:100%;
+
+    .articleTitle {
+        font-size: 20px;
+        width: 100%;
         text-align: left;
     }
+
     .main {
         display: flex;
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
     }
 
     .mainLeft,
     .mainRight {
-        justify-self:center;
-        align-self:center;
+        justify-self: center;
+        align-self: center;
         margin-left: auto;
         margin-right: auto;
-        
+
     }
 
     .pBody {
@@ -555,10 +567,10 @@ footer a:hover {
     }
 
     .mainLeft {
-        display:flex;
+        display: flex;
         flex-direction: column;
-        justify-content:center;
-        align-items:center;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         text-align: center;
         vertical-align: text-bottom;
@@ -591,7 +603,19 @@ footer .OppNetLogo {
     text-align: center;
     margin-bottom: 10px;
 }
+footer .footer,
+footer .footer-names,
+footer .footer-quote,
+footer .OppNetLogo {
+    grid-column: unset;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
+footer .OppNetLogo img {
+    width: 150px;
+    height: auto;
+}
 footer .OppNetLogo img {
     width: 150px;
     height: auto;
@@ -599,5 +623,3 @@ footer .OppNetLogo img {
 
 
 /*ANIMATION CSS*/
-
-
