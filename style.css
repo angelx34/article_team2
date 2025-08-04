@@ -17,9 +17,6 @@
     --slateViolet: #8C639D;
 }
 
-body.locked{
-    overflow:hidden;
-}
 /* Universal */
 * {
     font-family: Heebo;
@@ -35,22 +32,21 @@ body.locked{
     right: 0;
     margin: 0 auto;
     width: 80%;
-    padding-left:10px;
-    padding-right:10px;
     position: fixed;
     /*  */
     background-color: var(--light);
     align-items: center;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1rem 2rem;
     border-radius: 15px;
     z-index: 1000;
 
     /* Start completely hidden */
     opacity: 0;
-    visibility: visible;
+    visibility: hidden;
     transform: translateY(0);
 
     /* Multiple transition properties for better compatibility */
@@ -65,11 +61,37 @@ body.locked{
     backface-visibility: hidden;
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
 .navbar.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     -webkit-transform: translateY(0);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 0px;
 }
 
 /* images inside nav bar */
@@ -78,27 +100,43 @@ nav img {
 }
 
 /* anchor tag */
-.navbar #navButton{
+.navbar a {
     color: var(--dark);
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
-    transition: background-color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
 }
 
-.navbar #navButton:hover {
+.navbar a:hover {
     background-color: var(--primary);
     color: var(--light);
-    opacity: 0.8;
+}
+
+.mobile-menu{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu span{
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    margin: 3px 0;
+
 }
 
 /* Locks navbar on mobile DONT TOUCH*/
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     .navbar {
+        justify-content: none;
         opacity: 1 !important;
         visibility: visible !important;
         transform: translateY(0) !important;
         flex-direction: column;
+    }
+    .mobile-menu {
+        display: flex;
     }
 }
 
@@ -113,6 +151,7 @@ body {
     scrollbar-gutter: none;
     margin: 0;
     padding: 0;
+
 }
 
 /*Ensuring that scrollbar doesn't show up until scroll*/
@@ -128,18 +167,17 @@ html {
 body,
 html {
     height: 100%;
-    scrollbar-color: #FCEC87;
+    
 }
 
 /*Same as above except for header tags.*/
 h3 {
     font-weight: 100;
-    
 }
 
 /*cosmetics of cover. Can be fixed*/
 .cover {
-    background-image: url('/images/cover.png');
+    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -156,20 +194,22 @@ h3 {
 
 /*Making sure headline is white and bolded. */
 #headline {
-    visibility:hidden;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 50px;
+    text-align: center;
 }
 
 /*stylizing fonts */
 .IntroSection {
     padding: 20px;
-    padding-bottom: 5%;
 }
 
 /*stylizing fonts */
 .byline {
     text-align: center;
     /* margin: top-bottom, left-right; */
-    margin-top:30%;
+    margin: 10% 30%;
     font-style: italic;
     background-color: rgba(0, 0, 0, .5);
     color: var(--light);
@@ -179,16 +219,14 @@ h3 {
 .pBody {
     padding: 0% 7%;
     margin-top: 40px;
-    margin-left:10%;
-    margin-right:10%;
 }
 
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
 .main {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
-    gap: 20px;
+    gap: 10px;
     align-items: start;
     height: max-content;
     padding: 40px;
@@ -201,8 +239,8 @@ h3 {
     background-color: rgba(0, 0, 0, .5);
     color: var(--light);
     border-radius: 10px;
-    text-align:center;
-    
+    text-align:left;
+    padding: 0px 10px;
     box-sizing: border-box;
 }
 
@@ -215,7 +253,6 @@ h3 {
 }
 /*Stylizing mainLeft */
 .mainLeft {
-    border-radius:10px;
     margin-left: 5%;
     vertical-align: text-bottom;
 }
@@ -225,52 +262,47 @@ h3 {
     border-radius: 10px;
     display: flex;
     width: 100%;
-    height: 650px;
-    object-fit: cover;
+    height: max-content;
     text-align: center;
     transition: opacity 0.6s ease, filter 0.6s ease;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
 }
 
-@media(max-width:1348px){
-    .mainLeft img{
-        object-fit:contain;
-        box-shadow: none;
-    }
-    .mainLeft{
-        background-color: none;
-    }
-}
+
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
+    
 }
 
 /*Stylizing mainRight*/
 .mainRight {
-    height: 650px;
+    height: max-content;
     border-radius: 10px;
     padding: 20px;
-    overflow:auto;
-    background-color: #FFB300;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*Trying to make last paragraph a bit farther down from the main section. */
+#secondParagraph {
+    margin-top: -50px;
 }
 
 /*stylizing gridBox for winery games.*/
 .gridBox {
-    align-items: start;
     display: flex;
-    flex-direction:row;
-    text-align: center;    
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    padding: 40px;
+    box-sizing: border-box;
+    justify-items: center;
+
 }
 
 .wineryMain {
-    background-color: var(--light);
+    background-color: var(--primary);
 }
 
 /*the header tag of winery games. */
@@ -284,23 +316,15 @@ h3 {
 /*making each itemContainer have same attributes */
 .itemContainer {
     background: var(--primary);
-    padding: 18px 12px;
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
     box-sizing: border-box;
-    width: 100%;
-    height: 460px;
-    /*changes height of the box*/
-    min-width: 0;
-    min-height: 0;
-    transition: box-shadow 0.2s;
-    overflow: auto;
-    /*if text overflows out of box, makes sure you can scroll the text.*/
-    overflow-x: hidden;
-    /*Ensuring no scroll sideways*/
-    scrollbar-width: none;
-    scrollbar-gutter: none;
+    height: 100%;
+    max-width: 33%;
+    transition: box-shadow 0.2s, background ease-in 0.3s;
+    
 }
 
 /*when hovered, attributes take place as well as a transition into attributes. */
@@ -311,6 +335,7 @@ h3 {
     background: var(--light);
     z-index: 0;
     transition: box-shadow 0.2s, background 0.2s;
+    border-radius: 10px;
 }
 
 /*stylizing fonts. */
@@ -322,8 +347,6 @@ h3 {
 .itemContainer img {
     border-radius: 10px;
     width: auto;
-    /*tweak size if needed */
-    height: 200px;
     /*tweak size if needed */
     object-fit: cover;
     display: block;
@@ -343,51 +366,7 @@ h3 {
 
 /*font stylizing of blurb. */
 .itemContainer .wineryText {
-    font-size:17px;
-}
-.bibliography{
-    background-color: var(--slateGray);
-    color:white;
-}
-.bibliography h3{
-    text-align: center;
-    font-size: 50px;
-    font-weight: 500;
-}
-
-.bibContainer {
-    margin-top:25px;
-    justify-content:center;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.bibContainer h2{
-    font-size:25px;
-    margin-bottom:10px;
-}
-
-.bibLinks{
-    margin-top:10px;
-    display:inline-block;
-    text-align:left;
-    list-style-position:inside;
-    padding:0;
-    text-align:left;
-    margin-bottom:50px;
-    font-size:17px;
-}
-
-.bibLinks a{
-    text-decoration:none;
-    color:white;
-    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
-}
-
-.bibLinks a:hover, .bibLinks a:active, .bibLinks a:focus{
-    color: #E65100;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
-    transform: translateY(-2px) scale(1.04);
+    font-size: 15px;
 }
 
 /*Stylizing footer */
@@ -396,51 +375,103 @@ footer {
     width: 100%;
     text-align: center;
     color: var(--light);
-    padding: 10% 0%;
+    padding: 32px 0; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 10%; 
+    min-height: 80px
+}
+
+footer .footer{
+    grid-column-start: 2;
+    padding-bottom: 4%;
+    
+}
+footer .footer-title{
+    grid-column-start: 2;
+    
+}
+footer .footer-names{
+    grid-column-start: 2;
+    font-size: 20px;
+
+}
+footer .footer-quote{
+    grid-column-start: 2;
+    font-size: 16px;
+    font-style: italic;
+    color: #fff;
+    margin-top: 10px;
+}
+footer p{
+    font-size: 24px;
+
+    
+}
+footer .footer-names .footer-title{
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color:#fff;
+    margin-bottom: 10px;
+    
+
+}
+footer .OppNetLogo{ 
+  grid-row: 2 / span 2;
+
+
 }
 
 /* the a href tag of footer. */
 footer a {
     text-decoration: none;
     color: var(--light);
-    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
 }
 
 /*when hover these attributes take place. */
-footer a:hover, footer a:active, footer a:focus {
+footer a:hover {
     color: #E65100;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
     transform: translateY(-2px) scale(1.04);
 }
 
-/* MOBILE */
-/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
 
-/*4 tablets*/
-@media (max-width: 1430px){
-    .cover{
-        background-image: url("images/coverMobile.png");
-    }
-    #headline {
-        visibility:visible;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
-        font-size: 50px;
-        text-align: center;
-    }
+
+
+
+/* extra stuff
+footer {
+    background-color: var(--third);
+    width: 100%;
+    text-align: center;
+    color: var(--light);
+    padding: 10% 0%;
 }
 
-/*4 phones */
-@media (max-width: 500px) {
+
+footer a {
+    text-decoration: none;
+    color: var(--light);
+    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
+}
+
+
+footer a:hover {
+    color: #E65100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+    transform: translateY(-2px) scale(1.04);
+} */
+
+/* MOBILE */
+/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
+@media (max-width: 700px) {
     html {
         overflow-x: hidden;
         scroll-behavior:smooth;
         -webkit-overflow-scrolling: touch;
     }
     
-    .navbar{
-        
-    }
     .cover{
         background-image: url("images/coverMobile.png");
     }
@@ -450,17 +481,21 @@ footer a:hover, footer a:active, footer a:focus {
         padding: 5px;
         border: 3px #EF7D01 solid;
     }
+    
+    .navbar ul {
+    
+    align-items: center;
+    gap: 5%;
+    }
 
     #headline {
-        visibility:visible;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
         font-size: 30px;
         text-align: center;
     }
     .articleTitle{
         font-size:20px;
         width:100%;
+        text-align: left;
     }
     .main {
         display: flex;
@@ -474,6 +509,7 @@ footer a:hover, footer a:active, footer a:focus {
         align-self:center;
         margin-left: auto;
         margin-right: auto;
+        
     }
 
     .pBody {
@@ -484,32 +520,29 @@ footer a:hover, footer a:active, footer a:focus {
 
     .mainLeft {
         display:flex;
+        flex-direction: column;
         justify-content:center;
         align-items:center;
-        height: 300px; /* or use a specific value like 300px */
         width: 100%;
         text-align: center;
+        vertical-align: text-bottom;
         overflow: hidden;
     }
-
-    .mainLeft img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block; /* removes inline gap */
-    }
+}
 
     .mainRight {
         margin-top: 2.5px;
+        max-width: 100%;
+        /* stops side scrolling with bibliography */
+        overflow-x: clip;
     }
-
+    
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
     .itemContainer {
         flex: 0 0 100%;
         scroll-snap-align: start;
         width: 300px;
-        height: 500px;
-        overflow:hidden;
+        height: auto;
     }
 
     /*when hovered, attributes take place as well as a transition into attributes. */
@@ -539,7 +572,7 @@ footer a:hover, footer a:active, footer a:focus {
         align-items: center;
         padding: 16px 10px;
         font-size: 16px;
-  }
+    }
 
     footer .footer,
     footer .footer-names,
@@ -548,14 +581,14 @@ footer a:hover, footer a:active, footer a:focus {
         grid-column: unset;
         text-align: center;
         margin-bottom: 10px;
-  }
+    }
 
     footer .OppNetLogo img {
         width: 150px;
         height: auto;
   }
 
-}
+
 /*ANIMATION CSS*/
 
 
