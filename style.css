@@ -283,6 +283,7 @@ h3 {
     height: max-content;
     border-radius: 10px;
     padding: 20px;
+    background-color: var(--secondary);
 }
 
 /*Trying to make last paragraph a bit farther down from the main section. */
