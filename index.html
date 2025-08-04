@@ -10,41 +10,53 @@
     <!--Imported a font for text. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="/faviconStuff/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/faviconStuff/favicon.svg" />
+    <link rel="shortcut icon" href="/faviconStuff/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/faviconStuff/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="article2" />
+    <link rel="manifest" href="/faviconStuff/site.webmanifest" />
+    <link rel="manifest" href="/fav/site.webmanifest" />
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- Navigation Bar (Do'nt remove navbar id) -->
     <nav class="navbar" id="navbar">
+        <a href = "https://www.opportunitynetwork.org" target="_blank">
         <img src="images/fullOppNetLogo.jpg" alt="">
-        <ul class = " nav-links" id = navLinks>
-            <li> <a href="#headline">Top</a></li>
-            <li> <a href="#wineryMain"> Games</a></li>
-            <li> <a href="#contact"> Contact</a></li>
-
-        </ul>
-    
-        <div class ="mobile-menu" id = mobileMenu>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
+        </a>
+        <a href="#top" id ="navButton">
+            <div>
+                <p>About</p>
+            </div>
+        </a>
+        <a href="#wineryMain" id ="navButton">
+            <div>
+                <p>Game</p>
+            </div>
+        </a>
+        <a href="#contact" id ="navButton">
+            <div>
+                <p>Contact</p>
+            </div>
+        </a>
     </nav>
 
     <!--Cover page, the image is set in CSS.-->
-    <div class="cover">
+    <div class="cover" id="cover">
         <h1 id="headline">
              New Graduates Unemployment:
              Impacts of AI
         </h1>
+        <!-- Take this out -->
         <div class="byline">
-            <p> <strong>By:</strong> John Doe, Jane Doe <strong><br>Published:</strong> May 24, 2025</p>
+            <p> <strong id = "top">By:</strong> John Doe, Jane Doe <strong><br>Published:</strong> May 24, 2025</p>
         </div>
     </div>
 
     <!--Intro section, this applies also to the ending paragraph of the article. -->
-    <div class="IntroSection">
+    <div class="IntroSection" id="intro">
         <div class="pBody">
             <p> 
                 
@@ -69,16 +81,15 @@
     </div>
 
     <!--The main section (Image on left, Text on right) -->
-    <div class="main" id = "main">
-        <div class="mainLeft" id = "mainLeft">
+    <div class="main" id = "main1">
+        <div class="mainLeft" id = "mainLeft1">
             <img
-                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2Fe%2F6%2F8%2F364124.jpg&f=1&nofb=1&ipt=264f2d936a417082be2f1479d9184097b33ac634dad2515a12cca71b73a4f72a">
+                src="images\Lupe.png">
         </div>
         <!--This entire paragraph can be put into one P tag.-->
-        <div class="mainRight" id = "mainRight">
+        <div class="mainRight" id = "mainRight1">
+            <h2 class ="articleTitle"> New Graduates Unemployment: Impacts of AI </h2>
             <p> 
-               
-                <strong>New Graduates Unemployment: Impacts of AI</strong>
 
                 <br></br>
                 To be completely honest, I too am finding it hard to break into today’s job market as a Computer Science
@@ -100,7 +111,7 @@
                 roles that traditionally gave recent graduates a foothold in the workforce are being reduced,
                 restructured, or eliminated altogether.
                 <br></br>
-                <span class = "trigger" data-image = "images/afterGraduating.jpg">For students preparing to enter the workforce, this shift has created a deep sense of uncertainty.</span>
+                <span class = "trigger" data-image = "images\quote.png">For students preparing to enter the workforce, this shift has created a deep sense of uncertainty.</span>
                 Many graduates are finding that the skills they’ve spent years mastering are no longer enough — or no
                 longer in demand. As job descriptions change faster than university syllabi, students are left
                 scrambling to adapt on their own, often without institutional support. The gap between education and employment has
@@ -134,19 +145,30 @@
                 evolving faster than they can keep up. The future of work depends not just on technology, but on how we
                 prepare people to thrive alongside it.
                 
+                
             </p>
+            
+            <!-- <br>
+            <h3>Bibliography</h3>
+            <br>
+            <ul>
+                 <li> <a href="https://www.cbsnews.com/news/ai-jobs-unemployment-college-graduate/"> https://www.cbsnews.com/news/ai-jobs-unemployment-college-graduate/</a></li>
+                 <li> <a href="https://blog.pragmaticengineer.com/software-engineer-jobs-five-year-low/">https://blog.pragmaticengineer.com/software-engineer-jobs-five-year-low/</a></li>
+                 <li> <a href="https://www.windowscentral.com/artificial-intelligence/microsoft-copilot/microsoft-saved-usd500-million-using-ai-after-slashing-over-15-000-jobs-in-2025"> https://www.windowscentral.com/artificial-intelligence/microsoft-copilot/microsoft-saved-usd500-million-using-ai-after-slashing-over-15-000-jobs-in-2025</a></li>
+            </ul>  -->
         </div>
     </div>
     <div class="main" id = "main2">
+        
         <div class="mainLeft" id = "mainLeft2">
             <img
                 src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2Fe%2F6%2F8%2F364124.jpg&f=1&nofb=1&ipt=264f2d936a417082be2f1479d9184097b33ac634dad2515a12cca71b73a4f72a">
         </div>
         <!--This entire paragraph can be put into one P tag.-->
         <div class="mainRight" id = "mainRight2">
-            <p> 
             
-                <strong>Beyond the Digital Takeover: Why New Graduates Need More Than Just AI Anxiety</strong>
+            <p> 
+                <h2 class ="articleTitle" >Beyond the Digital Takeover: Why New Graduates Need More Than Just AI Anxiety</h2>
                 <br></br>
                 The specter of artificial intelligence stealing jobs has dominated headlines and graduation
                 speeches alike. Yet while new graduates nervously scan job boards wondering if their degrees 
@@ -229,7 +251,10 @@
                 building an economy that works for humans and machines alike. New graduates don't need to 
                 fear AI—they need better policies, more strategic education, and a job market that values the 
                 uniquely human skills they bring to an increasingly automated world.
+
+                
             </p>
+            
         </div>
     </div>
     <div class="main" id = "main3">
@@ -240,7 +265,7 @@
         <!--This entire paragraph can be put into one P tag.-->
         <div class="mainRight" id = "mainRight3">
             <p> 
-                <strong>Degrees Without Skills: How Gen Z’s AI Dependence Is Causing a Job Crisis</strong>
+                <h2 class ="articleTitle"> Degrees Without Skills: How Gen Z’s AI Dependence Is Causing a Job Crisis </h2>
                 <br></br>
                 As  graduation season rolls around  again, thousands of Gen Z college students are entering into the job market
                 with this piece of paper that symbolizes all the “hard work” they've done in the last four years and very little
@@ -292,6 +317,7 @@
                 Let’s not wait until the next wave of college graduates hits the job market unprepared. It’s time to rebuild our education 
                 system — with intention, with integrity, and with the future in mind.
             </p>
+
         </div>
     </div>
     
@@ -381,7 +407,9 @@
             </div>
         </div>
     </div>
-
+    <div class ="biblography">
+        <p></p>
+    </div>
     <!--Footer of the page.-->
     <footer id="contact">
         <p class ="footer" id="foot"> --------- </p>

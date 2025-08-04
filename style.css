@@ -50,7 +50,7 @@ body.locked{
 
     /* Start completely hidden */
     opacity: 0;
-    visibility: hidden;
+    visibility: visible;
     transform: translateY(0);
 
     /* Multiple transition properties for better compatibility */
@@ -65,24 +65,6 @@ body.locked{
     backface-visibility: hidden;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-
 .navbar.show {
     opacity: 1;
     visibility: visible;
@@ -96,42 +78,27 @@ nav img {
 }
 
 /* anchor tag */
-.navbar a {
+.navbar #navButton{
     color: var(--dark);
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+    transition: background-color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
 }
 
-.navbar a:hover {
+.navbar #navButton:hover {
     background-color: var(--primary);
     color: var(--light);
-}
-
-.mobile-menu{
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.mobile-menu span{
-    width: 25px;
-    height: 3px;
-    background: var(--dark);
-    margin: 3px 0;
-
+    opacity: 0.8;
 }
 
 /* Locks navbar on mobile DONT TOUCH*/
-@media (max-width: 768px) {
+@media (max-width: 811px) {
     .navbar {
         opacity: 1 !important;
         visibility: visible !important;
         transform: translateY(0) !important;
         flex-direction: column;
-    }
-    .mobile-menu {
-        display: flex;
     }
 }
 
@@ -167,6 +134,7 @@ html {
 /*Same as above except for header tags.*/
 h3 {
     font-weight: 100;
+    
 }
 
 /*cosmetics of cover. Can be fixed*/
@@ -188,25 +156,20 @@ h3 {
 
 /*Making sure headline is white and bolded. */
 #headline {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 50px;
-    text-align: center;
-
-    
     visibility:hidden;
 }
 
 /*stylizing fonts */
 .IntroSection {
     padding: 20px;
+    padding-bottom: 5%;
 }
 
 /*stylizing fonts */
 .byline {
     text-align: center;
     /* margin: top-bottom, left-right; */
-    margin: 10% 30%;
+    margin-top:30%;
     font-style: italic;
     background-color: rgba(0, 0, 0, .5);
     color: var(--light);
@@ -216,6 +179,8 @@ h3 {
 .pBody {
     padding: 0% 7%;
     margin-top: 40px;
+    margin-left:10%;
+    margin-right:10%;
 }
 
 /* The grid column for main section, making sure each divs are separated in a column on desktop. */
@@ -229,6 +194,16 @@ h3 {
     padding: 40px;
     position: relative;
     background-color:#667B82;
+}
+
+.articleTitle{ 
+    font-size:20px;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
+    border-radius: 10px;
+    text-align:center;
+    
+    box-sizing: border-box;
 }
 
 #main2{
@@ -250,22 +225,32 @@ h3 {
     border-radius: 10px;
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 650px;
     object-fit: cover;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: opacity 0.6s ease, filter 0.6s ease;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-/*The credits of photo. Stylizing fonts. */
-.mainLeft p {
-    font-size: 15px;
-    text-align: center;
-    margin-top: 10px;
-    font-style: italic;
-    color: white;
+@media(max-width:1348px){
+    .mainLeft img{
+        object-fit:contain;
+        box-shadow: none;
+    }
+    .mainLeft{
+        background-color: none;
+    }
 }
 
+@media(max-width:467px){
+    .mainLeft img{
+        object-fit:contain;
+        box-shadow:none;
+    }
+    .mainLeft{
+        background-color:none;
+    }
+}
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
@@ -275,46 +260,22 @@ h3 {
 
 /*Stylizing mainRight*/
 .mainRight {
-    height: max-content;
-    border-radius: 10px;
-    padding: 20px;
-}
-
-/*Trying to make last paragraph a bit farther down from the main section. */
-#secondParagraph {
-    margin-top: -50px;
-}
-
-/*stylizing gridBox for winery games.*/
-.gridBox {
-    display: grid;
-    grid-auto-rows: 1fr;
-    align-items: start;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    align-items: stretch;
-
-    /* height: 650px;
+    height: 650px;
     border-radius: 10px;
     padding: 20px;
     overflow:auto;
     background-color: #FFB300;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.mainRight p {
-    margin-left:10%;
-    margin-right:10%;
-}
+
+/*stylizing gridBox for winery games.*/
 .gridBox {
     align-items: start;
     display: flex;
     flex-direction:row;
     text-align: center;    
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; */
+    -webkit-overflow-scrolling: touch;
     overflow-x: auto;
 }
 
@@ -408,7 +369,6 @@ footer {
 footer a {
     text-decoration: none;
     color: var(--light);
-    
     transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
 }
 
@@ -419,17 +379,6 @@ footer a:hover {
     transform: translateY(-2px) scale(1.04);
 }
 
-
-
-
-
-/* MOBILE */
-/* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
-@media (max-width: 700px) {
-    html {
-        overflow-x: hidden;
-    }
-}
 /* MOBILE */
 /* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
 @media (max-width: 811px) {
@@ -439,7 +388,9 @@ footer a:hover {
         -webkit-overflow-scrolling: touch;
     }
     
-
+    .navbar{
+        
+    }
     .cover{
         background-image: url("images/coverMobile.png");
     }
@@ -451,18 +402,15 @@ footer a:hover {
     }
 
     #headline {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .main {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 100px;
+        visibility:visible;
         color: white;
         background-color: rgba(0, 0, 0, 0.5);
         font-size: 30px;
         text-align: center;
+    }
+    .articleTitle{
+        font-size:20px;
+        width:100%;
     }
     .main {
         display: flex;
@@ -470,22 +418,18 @@ footer a:hover {
         gap:10px;
     }
 
+    .mainLeft,
+    .mainRight {
+        justify-self:center;
+        align-self:center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .pBody {
         margin-left: 2%;
         margin-right: 2%;
         font-size: 19px;
-    }
-
-    /* check later */
-    .mainLeft {
-        border: #FFB300 5px solid;
-        height: 50%;
-        text-align: center;
-        vertical-align: text-bottom;
-    }
-    .mainLeft, .mainRight{
-        margin-left: -0.5%;
-        margin-right: -0.5%;
     }
 
     .mainLeft {
@@ -507,8 +451,6 @@ footer a:hover {
 
     .mainRight {
         margin-top: 2.5px;
-        float: left;
-        
     }
 
     /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
@@ -516,7 +458,8 @@ footer a:hover {
         flex: 0 0 100%;
         scroll-snap-align: start;
         width: 300px;
-        height: auto;
+        height: 500px;
+        overflow:hidden;
     }
 
     /*when hovered, attributes take place as well as a transition into attributes. */
