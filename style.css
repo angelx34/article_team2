@@ -46,7 +46,7 @@
 
     /* Start completely hidden */
     opacity: 0;
-    visibility: visible;
+    visibility: hidden;
     transform: translateY(0);
 
     /* Multiple transition properties for better compatibility */
@@ -60,6 +60,24 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
 
 .navbar.show {
     opacity: 1;
@@ -86,6 +104,20 @@ nav img {
     color: var(--light);
 }
 
+.mobile-menu{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu span{
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    margin: 3px 0;
+
+}
+
 /* Locks navbar on mobile DONT TOUCH*/
 @media (max-width: 700px) {
     .navbar {
@@ -93,6 +125,9 @@ nav img {
         visibility: visible !important;
         transform: translateY(0) !important;
         flex-direction: column;
+    }
+    .mobile-menu {
+        display: flex;
     }
 }
 
@@ -347,6 +382,10 @@ footer a:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
     transform: translateY(-2px) scale(1.04);
 }
+
+
+
+
 
 /* MOBILE */
 /* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
