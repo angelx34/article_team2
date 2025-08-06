@@ -86,6 +86,14 @@
     -webkit-transform: translateY(0);
 }
 
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 0px;
+}
+
 /* images inside nav bar */
 nav img {
     height: 80px;
@@ -104,13 +112,13 @@ nav img {
     color: var(--light);
 }
 
-.mobile-menu{
+.mobile-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
 
-.mobile-menu span{
+.mobile-menu span {
     width: 25px;
     height: 3px;
     background: var(--dark);
@@ -121,11 +129,13 @@ nav img {
 /* Locks navbar on mobile DONT TOUCH*/
 @media (max-width: 700px) {
     .navbar {
+        justify-content: none;
         opacity: 1 !important;
         visibility: visible !important;
         transform: translateY(0) !important;
         flex-direction: column;
     }
+
     .mobile-menu {
         display: flex;
     }
@@ -158,7 +168,7 @@ html {
 body,
 html {
     height: 100%;
-    scrollbar-color: #FCEC87;
+
 }
 
 /*Same as above except for header tags.*/
@@ -168,7 +178,7 @@ h3 {
 
 /*cosmetics of cover. Can be fixed*/
 .cover {
-    background-image: url('https://opportunitynetwork.org/wp-content/uploads/2019/08/3653102-1024x683.jpg');
+    background-image: url('images/coverDesktop.png');
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -185,10 +195,10 @@ h3 {
 
 /*Making sure headline is white and bolded. */
 #headline {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: transparent;
     font-size: 50px;
     text-align: center;
+    
 }
 
 /*stylizing fonts */
@@ -222,6 +232,26 @@ h3 {
     height: max-content;
     padding: 40px;
     position: relative;
+    background-color: #667B82;
+}
+
+.articleTitle {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
+    border-radius: 10px;
+    text-align: left;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#main2 {
+    background-color: #4052A0;
+
+}
+
+#main3 {
+    background-color: #C23041;
 }
 
 /*Stylizing mainLeft */
@@ -235,26 +265,20 @@ h3 {
     border-radius: 10px;
     display: flex;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    height: max-content;
     text-align: center;
+    transition: opacity 0.6s ease, filter 0.6s ease;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5%;
 }
 
-/*The credits of photo. Stylizing fonts. */
-.mainLeft p {
-    font-size: 15px;
-    text-align: center;
-    margin-top: 10px;
-    font-style: italic;
-    color: white;
-}
 
 /*Making both have same height and attributes. */
 .mainLeft,
 .mainRight {
     height: fit-content;
     box-sizing: border-box;
+
 }
 
 /*Stylizing mainRight*/
@@ -262,6 +286,7 @@ h3 {
     height: max-content;
     border-radius: 10px;
     padding: 20px;
+    background-color: var(--secondary);
 }
 
 /*Trying to make last paragraph a bit farther down from the main section. */
@@ -271,21 +296,15 @@ h3 {
 
 /*stylizing gridBox for winery games.*/
 .gridBox {
-    display: grid;
-    grid-auto-rows: 1fr;
-    align-items: start;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
     display: flex;
-    flex-direction: row;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    align-items: stretch;
-    overflow-x: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    padding: 40px;
+    box-sizing: border-box;
 }
 
 .wineryMain {
-    background-color: var(--light);
+    background-color: var(--primary);
 }
 
 /*the header tag of winery games. */
@@ -299,23 +318,15 @@ h3 {
 /*making each itemContainer have same attributes */
 .itemContainer {
     background: var(--primary);
-    padding: 18px 12px;
     display: flex;
     flex-direction: column;
+    align-self: top;
     align-items: center;
     box-sizing: border-box;
-    width: 100%;
-    height: 460px;
-    /*changes height of the box*/
-    min-width: 0;
-    min-height: 0;
-    transition: box-shadow 0.2s;
-    overflow: auto;
-    /*if text overflows out of box, makes sure you can scroll the text.*/
-    overflow-x: hidden;
-    /*Ensuring no scroll sideways*/
-    scrollbar-width: none;
-    scrollbar-gutter: none;
+    height: 100%;
+    max-width: 32%;
+    transition: box-shadow 0.2s, background ease-in 0.3s;
+
 }
 
 /*when hovered, attributes take place as well as a transition into attributes. */
@@ -326,6 +337,7 @@ h3 {
     background: var(--light);
     z-index: 0;
     transition: box-shadow 0.2s, background 0.2s;
+    border-radius: 10px;
 }
 
 /*stylizing fonts. */
@@ -337,8 +349,6 @@ h3 {
 .itemContainer img {
     border-radius: 10px;
     width: auto;
-    /*tweak size if needed */
-    height: 200px;
     /*tweak size if needed */
     object-fit: cover;
     display: block;
@@ -361,13 +371,101 @@ h3 {
     font-size: 15px;
 }
 
+.mainRight {
+    margin-top: 2.5px;
+    max-width: 100%;
+    /* stops side scrolling with bibliography */
+    overflow-x: clip;
+}
+
+/* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
+.itemContainer {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    width: 300px;
+    height: auto;
+}
+
+/*when hovered, attributes take place as well as a transition into attributes. */
+.itemContainer:hover,
+.itemContainer:focus,
+.itemContainer:active {
+    box-shadow: 0 0 0 0 none, 0 0 0 0 none;
+    background: var(--primary);
+    z-index: 0;
+    transition: none;
+}
+
+.itemContainer p {
+    font-size: 16px;
+    text-align: left;
+}
+
+    .itemContainer img {
+        height: 250px;
+        width: 100%;
+    }
+    
+
+
 /*Stylizing footer */
 footer {
     background-color: var(--third);
     width: 100%;
     text-align: center;
     color: var(--light);
-    padding: 10% 0%;
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 10%;
+    min-height: 80px
+}
+
+footer .footer {
+    grid-column-start: 2;
+    padding-bottom: 4%;
+
+}
+
+footer .footer-title {
+    grid-column-start: 2;
+
+}
+
+footer .footer-names {
+    grid-column-start: 2;
+    font-size: 20px;
+
+}
+
+footer .footer-quote {
+    grid-column-start: 2;
+    font-size: 16px;
+    font-style: italic;
+    color: #fff;
+    margin-top: 10px;
+}
+
+footer p {
+    font-size: 24px;
+
+
+}
+
+footer .footer-names .footer-title {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 10px;
+
+
+}
+
+footer .OppNetLogo {
+    grid-row: 2 / span 2;
+
+
 }
 
 /* the a href tag of footer. */
@@ -387,11 +485,40 @@ footer a:hover {
 
 
 
+/* extra stuff
+footer {
+    background-color: var(--third);
+    width: 100%;
+    text-align: center;
+    color: var(--light);
+    padding: 10% 0%;
+}
+
+
+footer a {
+    text-decoration: none;
+    color: var(--light);
+    transition: color 0.4s ease, color 0.4s ease, opacity 0.4s ease;
+}
+
+
+footer a:hover {
+    color: #E65100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.01);
+    transform: translateY(-2px) scale(1.04);
+} */
+
 /* MOBILE */
 /* Responsive design 4 phones, DOES NOT WORKKKKKKKKK*/
 @media (max-width: 700px) {
     html {
         overflow-x: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cover {
+        background-image: url("images/coverMobile.png");
     }
 
     .logo img {
@@ -401,15 +528,38 @@ footer a:hover {
         border: 3px #EF7D01 solid;
     }
 
+    .navbar ul {
+
+        align-items: center;
+        gap: 5%;
+    }
+
     #headline {
         font-size: 30px;
         text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    .articleTitle {
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
     }
 
     .main {
         display: flex;
         flex-direction: column;
-        margin-bottom: 100px;
+        gap: 10px;
+    }
+
+    .mainLeft,
+    .mainRight {
+        justify-self: center;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
     .pBody {
@@ -419,49 +569,59 @@ footer a:hover {
     }
 
     .mainLeft {
-        border: #FFB300 5px solid;
-        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         text-align: center;
         vertical-align: text-bottom;
         overflow: hidden;
     }
-
-    .mainLeft img {
-        margin: 0 auto;
-    }
-
-    .mainRight {
-        margin-top: 2.5px;
-        float: left;
-        
-    }
-
-    /* This appears to be designed for a horizontal scroll container where each item is 300px wide, snaps into place when scrolling, and provides visual feedback when users interact with individual items. */
     .itemContainer {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        width: 300px;
-        height: auto;
-    }
-
-    /*when hovered, attributes take place as well as a transition into attributes. */
-    .itemContainer:hover,
-    .itemContainer:focus,
-    .itemContainer:active {
-        box-shadow: 0 0 0 0 none, 0 0 0 0 none;
-        background: var(--primary);
-        z-index: 0;
-        transition: none;
-    }
-
-    .itemContainer p {
-        font-size: 16px;
-        text-align: left;
-    }
-
-    .itemContainer img {
-        height: 250px;
-        width: 100%;
         max-width: 100%;
     }
+    
+    .gridBox {
+        display: flex;
+        flex-direction: column;
+    }
 }
+    
+    /* New footer code added */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 10px;
+    font-size: 16px;
+}
+
+footer .footer,
+footer .footer-names,
+footer .footer-quote,
+footer .OppNetLogo {
+    grid-column: unset;
+    text-align: center;
+    margin-bottom: 10px;
+}
+footer .footer,
+footer .footer-names,
+footer .footer-quote,
+footer .OppNetLogo {
+    grid-column: unset;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer .OppNetLogo img {
+    width: 150px;
+    height: auto;
+}
+footer .OppNetLogo img {
+    width: 150px;
+    height: auto;
+}
+
+
+/*ANIMATION CSS*/
