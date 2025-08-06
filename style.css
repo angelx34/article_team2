@@ -151,7 +151,6 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: var(--secondary);
-
 }
 
 /*Making sure headline is white and bolded. */
@@ -163,17 +162,6 @@ h3 {
 .IntroSection {
     padding: 20px;
     padding-bottom: 5%;
-}
-
-/*stylizing fonts */
-.byline {
-    text-align: center;
-    /* margin: top-bottom, left-right; */
-    margin-top:30%;
-    font-style: italic;
-    background-color: rgba(0, 0, 0, .5);
-    color: var(--light);
-    border-radius: 10px;
 }
 
 .pBody {
@@ -424,10 +412,10 @@ footer a:hover, footer a:active, footer a:focus {
     }
     #headline {
         visibility:visible;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
+        color: rgb(239,228,217);
         font-size: 50px;
         text-align: center;
+        margin-bottom:25%;
     }
 }
 
@@ -454,10 +442,10 @@ footer a:hover, footer a:active, footer a:focus {
 
     #headline {
         visibility:visible;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
-        font-size: 30px;
+        color: rgb(239,228,217);
+        font-size: 25px;
         text-align: center;
+        margin-bottom:25%;
     }
     .articleTitle{
         font-size:20px;
